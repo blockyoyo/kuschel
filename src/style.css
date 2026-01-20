@@ -35,13 +35,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 0.1rem 2rem;
   position: relative;
 }
 
 .logo {
-  width: 160px;
-  height: 160px;
+  padding: 10px;
+  width: 320px;
+  height: 320px;
 }
 
 .logo_text {

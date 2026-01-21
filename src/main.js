@@ -7,19 +7,22 @@ document.querySelector('#app').innerHTML = `
     <div >
     <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="logo" />
     </div>
-    <button class="cta-button">BOOK A SLOT</button>
+    <div class="header-right">
+      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
+      <button class="cta-button">BOOK A SLOT</button>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     
-    <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
+    
     <br>
     <br>
     
     <p class="hero-text">
       Located in Am Glockenbach 11, in the heart of Munich. <br>
-      It’s a calm, grooming space designed to feel safe, <br>
+      Kuscheltier is a calm, grooming space designed to feel safe, <br>
       quiet, and comfortable for every dog.
     </p>
      <p class="hero-text">
@@ -36,28 +39,21 @@ document.querySelector('#app').innerHTML = `
       Unhurried, Gentle Pace.
     </h2>
      <p class="hero-text">
-      I take my time. There’s no rush during bathing, drying, or grooming.<br>
+      I take my time. There's no rush during bathing, drying, or grooming.<br>
       We bond throughout the whole process.
     </p>
-    <svg class="illustration" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 100 50 Q 80 80 90 120 Q 100 140 110 120 Q 120 80 100 50" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <ellipse cx="100" cy="140" rx="40" ry="25" stroke="#4338ca" stroke-width="2" fill="none" transform="rotate(-10 100 140)"/>
-      <path d="M 100 165 Q 90 200 100 240" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <ellipse cx="100" cy="260" rx="35" ry="20" stroke="#4338ca" stroke-width="2" fill="none" transform="rotate(15 100 260)"/>
-    </svg>
+   
   </section>
 
   <!-- Section 1 -->
   <section class="content-section">
     <h2 class="section-title">Support for Shelter Dogs</h2>
     <p class="section-text">
-     With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you’ve adopted from a shelter, your dog’s first grooming is free—extra time, gentle care, and a calm start.
+     With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
+     is free—extra time, gentle care and a calm start.
     </p>
     <button class="cta-button-large">Book your appointment now</button>
-    <svg class="illustration" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 100 50 L 100 280 M 80 100 Q 100 120 120 100 M 70 180 Q 100 200 130 180" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <path d="M 90 240 Q 100 250 110 240 Q 120 230 110 220" stroke="#4338ca" stroke-width="2" fill="none"/>
-    </svg>
+   
   </section>
 
   <!-- Section 2 -->
@@ -82,11 +78,7 @@ document.querySelector('#app').innerHTML = `
     <p class="section-text">
       <b>Large dogs — 180 €</b> <br> Goldendoodle, Lagotto Romagnolo, similar curly or long-coat types Königspudel: <b>+20 €</b>
     </p>
-    <svg class="illustration" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 100 50 Q 120 100 100 150 Q 80 200 100 250" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <circle cx="100" cy="150" r="30" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <path d="M 80 120 L 120 180 M 120 120 L 80 180" stroke="#4338ca" stroke-width="2"/>
-    </svg>
+   
   </section>
 
   <!-- Section 3 -->
@@ -94,21 +86,16 @@ document.querySelector('#app').innerHTML = `
     <h2 class="section-title">First Grooming for Adopted Dogs</h2>
     <p class="section-text">
       A dedicated first grooming visit for dogs adopted from shelters, with extra time to build trust and introduce the process calmly.
-Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
+Price: 50% discount on the standard Full Grooming rateDuration: up to 4 hours
     </p>
-    <svg class="illustration" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 100 50 Q 80 100 90 150 Q 100 200 110 250 Q 90 300 100 350" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <circle cx="100" cy="150" r="25" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <circle cx="100" cy="250" r="30" stroke="#4338ca" stroke-width="2" fill="none"/>
-      <path d="M 70 100 L 130 100 M 75 200 L 125 200 M 80 300 L 120 300" stroke="#4338ca" stroke-width="2"/>
-    </svg>
+    
   </section>
 
   <!-- Section 4 -->
   <section class="content-section">
     <h2 class="section-title">Maintenance</h2>
     <p class="section-text">
-      A service between full grooming sessions. Includes washing, drying, <br> 
+      A service between full grooming sessions.Includes washing, drying, <br> 
       and clean-ups around the eyes, under the paws, and the genital area.<br>
       <br>
       <b>Duration: 1.5 hours (+30 minutes for Königspudel)</b>  
@@ -122,16 +109,7 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
       Large dogs — 80 €
       <br>
     </p>
-    <svg class="illustration-large" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-      <g id="scribble">
-        <path d="M 50 50 Q 80 80 60 120 Q 40 160 70 180 Q 100 200 80 240" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 100 60 Q 130 90 110 130 Q 90 170 120 190 Q 150 210 130 250" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 70 100 Q 100 130 80 170 Q 60 210 90 230" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 120 80 Q 140 110 130 150 Q 120 190 140 220" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <circle cx="100" cy="150" r="60" stroke="#4338ca" stroke-width="2" fill="none" opacity="0.3"/>
-        <path d="M 60 120 L 140 180 M 140 120 L 60 180" stroke="#4338ca" stroke-width="3" opacity="0.5"/>
-      </g>
-    </svg>
+   
     <button class="cta-button-large">See how it works</button>
   </section>
 
@@ -152,16 +130,7 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
       Best timing: come in right after the last vaccinations. The earlier we start, <br>
       the easier it is to avoid matting and build a relaxed routine.
     </p>
-    <svg class="illustration-large" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-      <g id="scribble">
-        <path d="M 50 50 Q 80 80 60 120 Q 40 160 70 180 Q 100 200 80 240" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 100 60 Q 130 90 110 130 Q 90 170 120 190 Q 150 210 130 250" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 70 100 Q 100 130 80 170 Q 60 210 90 230" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <path d="M 120 80 Q 140 110 130 150 Q 120 190 140 220" stroke="#4338ca" stroke-width="2" fill="none"/>
-        <circle cx="100" cy="150" r="60" stroke="#4338ca" stroke-width="2" fill="none" opacity="0.3"/>
-        <path d="M 60 120 L 140 180 M 140 120 L 60 180" stroke="#4338ca" stroke-width="3" opacity="0.5"/>
-      </g>
-    </svg>
+  
     
   </section>
 
@@ -280,7 +249,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>I groom one dog at a time and adjust the pace to the dog's comfort. Washing, drying, and grooming can be stressful for some dogs, so I slow down when needed to reduce tension and keep the experience calm. The extended duration ensures the process stays safe, comfortable, and unhurried.</p>
+          <p>I groom one dog at a time and adjust the pace to the dog's comfort. Washing, drying, and grooming can be stressful for some dogs, 
+          so I slow down when needed to reduce tension and keep the experience calm. The extended duration ensures the process stays safe, comfortable, and unhurried.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -289,7 +259,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Regular Maintenance visits prevent matting, keep the coat healthy, and reduce stress during Full Grooming sessions. They also include removing fur around the eyes and under the paws, which helps the dog stay comfortable between full appointments.</p>
+          <p>Regular Maintenance visits prevent matting, keep the coat healthy, and reduce stress during Full Grooming sessions. 
+          They also include removing fur around the eyes and under the paws, which helps the dog stay comfortable between full appointments.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -307,7 +278,9 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>I prefer not. Most dogs become more distracted or anxious when their owner is present, which makes the process harder for them. I also need to build trust and focus directly with the dog and when the owner is nearby, the dog looks for contact with them instead of connecting with me. This increases stress and often makes the session longer and less comfortable for the dog.</p>
+          <p>I prefer not. Most dogs become more distracted or anxious when their owner is present, which makes the process harder for them. 
+          I also need to build trust and focus directly with the dog and when the owner is nearby, the dog looks for contact with them instead of connecting with me. 
+          This increases stress and often makes the session longer and less comfortable for the dog.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -316,7 +289,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>To avoid distractions. I groom one dog at a time, and both the dog and I need to stay focused and connected throughout the session. Unexpected entries interrupt this process and make it harder for the dog to remain calm and present.</p>
+          <p>To avoid distractions. I groom one dog at a time, and both the dog and I need to stay focused and connected throughout the session. 
+          Unexpected entries interrupt this process and make it harder for the dog to remain calm and present.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -343,7 +317,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>As early as possible — ideally after all required vaccinations. Beginning young helps the puppy build positive associations with grooming and makes future sessions much easier. My Puppy Adaptation session is designed exactly for this purpose.</p>
+          <p>As early as possible — ideally after all required vaccinations. Beginning young helps the puppy build positive associations with grooming and 
+          makes future sessions much easier. My Puppy Adaptation session is designed exactly for this purpose.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -352,7 +327,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Regular brushing at home helps prevent matting and makes the grooming process much more comfortable for your dog. If you brush your dog consistently, there's nothing additional you need to prepare before the appointment.</p>
+          <p>Regular brushing at home helps prevent matting and makes the grooming process much more comfortable for your dog. If you brush your dog 
+          consistently, there's nothing additional you need to prepare before the appointment.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -361,7 +337,8 @@ Price: 50% discount on the standard Full Grooming rate Duration: up to 4 hours
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Yes. I work with positive reinforcement, so treats are often part of the grooming process or given afterward, depending on the dog's needs. I also provide treats at the studio—just let me know if your dog has any allergies.</p>
+          <p>Yes. I work with positive reinforcement, so treats are often part of the grooming process or given afterward, depending on the dog's needs. 
+          I also provide treats at the studio—just let me know if your dog has any allergies.</p>
         </div>
       </div>
       <div class="faq-item">

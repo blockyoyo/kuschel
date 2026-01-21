@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Barrio&display=swap');
+
+.agdasima-regular {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.agdasima-bold {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.barrio-regular {
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 * {
   margin: 0;
@@ -34,8 +54,8 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.1rem 2rem;
+  align-items:center;
+  padding: 0.4rem 2rem;
   position: relative;
 }
 
@@ -45,8 +65,16 @@ body {
   height: 320px;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
 .logo_text {
-  width: 280px;
+  padding-bottom: 3rem;
+  width: 220px;
   height: auto;
 }
 .cta-button {
@@ -113,8 +141,8 @@ body {
 }
 
 .section-title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-family: "Barrio", system-ui;
+  font-size: 8rem;
   margin-bottom: 2rem;
   color: var(--text-dark);
   line-height: 1.2;
@@ -436,11 +464,30 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .logo {
-    font-size: 1.25rem;
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+  }
+
+  .header-right {
+    gap: 0.25rem;
+  }
+
+  .logo_text {
+    width: 120px;
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
   }
 
   .hero-title {
@@ -473,19 +520,29 @@ body {
   }
 }
 
-.agdasima-regular {
-  font-family: "Agdasima", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.agdasima-bold {
-  font-family: "Agdasima", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
 @media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .logo {
+    width: 160px;
+    height: 160px;
+    padding: 3px;
+  }
+
+  .logo_text {
+    width: 100px;
+    padding-bottom: 2.25rem;
+  }
+
+  .cta-button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
   .hero {
     padding: 2rem 1rem;
   }

@@ -253,7 +253,7 @@ export function Home() {
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq-section" data-animate="parallaxReveal">
+  <section class="faq-section" >
     <h2 class="section-title">FAQ</h2>
     <div class="faq-container">
       <div class="faq-item">

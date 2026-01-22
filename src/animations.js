@@ -130,7 +130,7 @@ export function initAnimations() {
       duration: 0.5 // Image comes in during first half
     }, 0)
     // Add pause - image holds in place for second half of timeline
-    .to({}, { duration: 0.5, ease: 'none' });
+    .to({}, { duration: 1, ease: 'none' });
 
     // After pin ends, animate image scrolling up and out of view
     // This trigger starts when the wrapper's bottom reaches the top of viewport
@@ -154,13 +154,13 @@ export function initAnimations() {
 
   // STEP 2: Fade in content after image (SECOND - appears right after image in DOM)
   if (heroContentAfter) {
-    gsap.set(heroContentAfter, { opacity: 100 });
+    gsap.set(heroContentAfter, { opacity: 0 });
     gsap.to(heroContentAfter, {
       opacity: 1,
       scrollTrigger: {
         trigger: heroContentAfter,
-        start: 'top 80%',
-        end: 'top 50%',
+        start: 'top 60%',
+        end: 'top 40%',
         toggleActions: 'play none none reverse',
         scroller: document.body,
         refreshPriority: 2, // Second priority - appears after image

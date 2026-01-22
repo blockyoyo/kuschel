@@ -61,8 +61,8 @@ body {
 
 .logo {
   padding: 10px;
-  width: 320px;
-  height: 320px;
+  width: 220px;
+  height: 220px;
 }
 
 .header-right {
@@ -107,7 +107,7 @@ body {
 
 .hero-content {
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 22rem 2rem;
   position: relative;
   max-width: 800px;
   margin: 0 auto;
@@ -121,6 +121,7 @@ body {
   justify-content: center;
   position: relative;
   z-index: 5;
+  padding-top: 0;
 }
 
 #content-after-image {

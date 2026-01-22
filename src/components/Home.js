@@ -242,7 +242,7 @@ export function Home() {
 
   <!-- Full Screen Image 4 -->
     <section class="fullscreen-image">
-      <img src="/3.jpg" alt="Dog grooming" />
+      <img src="/4.jpg" alt="Dog grooming" />
     </section>
 
   <!-- FAQ Section -->

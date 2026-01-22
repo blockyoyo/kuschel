@@ -185,10 +185,11 @@ export function initAnimations() {
   const animationPresets = {
     // Parallax reveal with rotation
     parallaxReveal: {
-      from: { opacity: 0, y: 100, rotation: -5, scale: 0.9 },
+      from: { opacity: 0, y: 100, x: -2000, rotation: -1, scale: 0.9 },
       to: { 
         opacity: 1, 
         y: 0, 
+        x: 0,
         rotation: 0, 
         scale: 1, 
         duration: 1.2, 

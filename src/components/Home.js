@@ -47,7 +47,7 @@ export function Home() {
  
 
     <!-- Section 1 -->
-    <section class="content-section" data-animate="slideScaleUp">
+    <section class="content-section" data-animate="parallaxReveal" >
     <h2 class="section-title">Support for Shelter Dogs</h2>
     <p class="section-text">
      With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
@@ -57,8 +57,12 @@ export function Home() {
    
   </section>
 
+   <div class="image-section" id="pushing-image" data-animate="imagePush">
+        <img src="/2.jpg" alt="Test image" class="test-image" />
+      </div>
+
   <!-- Section 2 -->
-  <section class="content-section" data-animate="slideBlur">
+  <section class="content-section" data-animate="parallaxReveal">
     <h2 class="section-title">Services</h2>
      <h2 class="hero-text">
       Full Grooming

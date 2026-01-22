@@ -338,10 +338,35 @@ body {
 
 /* Footer */
 .footer {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
   padding: 4rem 2rem;
   background-color: var(--bg-light);
   margin-top: 4rem;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-column-address {
+  text-align: left;
+}
+
+.footer-column-links {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-column-logo {
+  text-align: left;
+  align-items: flex-start;
 }
 
 .footer-illustration {
@@ -359,6 +384,11 @@ body {
   letter-spacing: 0.05em;
 }
 
+.footer-logo-img {
+  width: 200px;
+  height: auto;
+}
+
 .footer h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -370,8 +400,155 @@ body {
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--text-dark);
-  max-width: 600px;
+  margin: 0;
+}
+
+.footer-link {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
+
+.logo-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Contact Page Styles */
+.contact-section {
+  margin-bottom: 4rem;
+}
+
+.contact-section:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.contact-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: var(--primary-purple);
+  text-decoration: underline;
+}
+
+.about-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.photo-container {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.map-container {
+  margin: 2rem auto;
+  width: 1000px;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.hours-item:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+.hours-time {
+  font-size: 1.25rem;
+  color: var(--text-gray);
+}
+
+/* Privacy & Legal Page Styles */
+.privacy-content,
+.legal-content {
+  max-width: 800px;
   margin: 0 auto;
+  text-align: left;
+}
+
+.privacy-section,
+.legal-section {
+  margin-bottom: 3rem;
+}
+
+.privacy-list,
+.legal-list {
+  list-style-position: inside;
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.privacy-list li,
+.legal-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-dark);
 }
 
 /* FAQ Section */
@@ -518,6 +695,21 @@ body {
   .email-screenshots {
     min-height: auto;
   }
+
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .footer-column-address {
+    text-align: left;
+  }
+
+  .footer-column-logo {
+    text-align: left;
+    align-items: flex-start;
+  }
 }
 
 
@@ -558,5 +750,46 @@ body {
   .cta-button-large {
     padding: 0.875rem 2rem;
     font-size: 0.95rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo-img {
+    width: 150px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    min-width: 100%;
+  }
+
+  .about-photos {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .photo-container {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .opening-hours {
+    max-width: 100%;
+  }
+
+  .hours-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .map-container {
+    margin: 1rem 0;
   }
 }

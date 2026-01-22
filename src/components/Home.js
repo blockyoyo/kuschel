@@ -6,38 +6,48 @@ export function Home() {
     ${Header()}
     
     <!-- Hero Section -->
-    <section class="hero">
-      <br>
-      <br>
+    <section class="hero-wrapper">
+      <div class="hero-content" id="hero-initial-content">
+        <br>
+        <br>
 
-    <p class="hero-text">
-      Located in Am Glockenbach 11, in the heart of Munich. <br>
-      Kuscheltier is a calm, grooming space designed to feel safe, <br>
-      quiet, and comfortable for every dog.
-    </p>
-     <p class="hero-text">
-      Making a difference.
-    </p>
-    <h2 class="section-title">
-      One Dog at a Time.
-    </h2>
-    
-    <p class="hero-text">
-      A full service means your dog receives my full attention from start to finish. <br>
-      No overlap, no waiting, no distractions.
-    </p>
-    <h2 class="section-title">
-      Unhurried, Gentle Pace.
-    </h2>
-     <p class="hero-text">
-      I take my time. There's no rush during bathing, drying, or grooming.<br>
-      We bond throughout the whole process.
-    </p>
-   
-  </section>
+        <p class="hero-text">
+          Located in Am Glockenbach 11, in the heart of Munich. <br>
+          Kuscheltier is a calm, grooming space designed to feel safe, <br>
+          quiet, and comfortable for every dog.
+        </p>
+        <p class="hero-text">
+          Making a difference.
+        </p>
+        <h2 class="section-title">
+          One Dog at a Time.
+        </h2>
+      </div>
+      
+      <div class="image-section" id="pushing-image" data-animate="imagePush">
+        <img src="/1.jpg" alt="Test image" class="test-image" />
+      </div>
+    </section>
+
+    <!-- Content After Image -->
+    <section class="hero-content hero-content-after" id="content-after-image">
+      <p class="hero-text">
+        A full service means your dog receives my full attention from start to finish. <br>
+        No overlap, no waiting, no distractions.
+      </p>
+      <h2 class="section-title">
+        Unhurried, Gentle Pace.
+      </h2>
+      <p class="hero-text">
+        I take my time. There's no rush during bathing, drying, or grooming.<br>
+        We bond throughout the whole process.
+      </p>
+    </section>
+
+ 
 
     <!-- Section 1 -->
-    <section class="content-section">
+    <section class="content-section" data-animate="slideScaleUp">
     <h2 class="section-title">Support for Shelter Dogs</h2>
     <p class="section-text">
      With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
@@ -48,7 +58,7 @@ export function Home() {
   </section>
 
   <!-- Section 2 -->
-  <section class="content-section">
+  <section class="content-section" data-animate="slideBlur">
     <h2 class="section-title">Services</h2>
      <h2 class="hero-text">
       Full Grooming
@@ -73,7 +83,7 @@ export function Home() {
   </section>
 
   <!-- Section 3 -->
-  <section class="content-section">
+  <section class="content-section" data-animate="parallaxFade">
     <h2 class="section-title">First Grooming for Adopted Dogs</h2>
     <p class="section-text">
       A dedicated first grooming visit for dogs adopted from shelters, <br>
@@ -89,7 +99,7 @@ export function Home() {
   </section>
 
   <!-- Section 4 -->
-  <section class="content-section">
+  <section class="content-section" data-animate="slideUpRotate">
     <h2 class="section-title">Maintenance</h2>
     <p class="section-text">
       A service between full grooming sessions.Includes washing, drying, <br> 
@@ -112,7 +122,7 @@ export function Home() {
   </section>
 
   <!-- Section 5 -->
-   <section class="content-section">
+   <section class="content-section" data-animate="scaleRotate">
     <h2 class="section-title">Puppy Adaptation</h2>
     <p class="section-text">
       A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
@@ -133,7 +143,7 @@ export function Home() {
   </section>
 
   <!-- Features Grid -->
-  <section class="features-section">
+  <section class="features-section" data-animate="staggerReveal">
     <h2 class="section-title">What you get:</h2>
     <div class="features-grid">
       <div class="feature-card">
@@ -238,7 +248,7 @@ export function Home() {
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq-section">
+  <section class="faq-section" data-animate="parallaxReveal">
     <h2 class="section-title">FAQ</h2>
     <div class="faq-container">
       <div class="faq-item">

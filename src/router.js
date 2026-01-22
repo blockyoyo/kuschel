@@ -2,6 +2,7 @@ import { Home } from './components/Home.js';
 import { Contact } from './components/Contact.js';
 import { Privacy } from './components/Privacy.js';
 import { Legal } from './components/Legal.js';
+import { initScrollAnimations, destroyScrollAnimations, initAnimations } from './animations.js';
 
 const routes = {
   '/': Home,
@@ -12,10 +13,31 @@ const routes = {
 
 export function router() {
   const app = document.querySelector('#app');
+  let isHomePage = false;
   
   function render(path) {
+    // Clean up animations if leaving home page
+    if (isHomePage && path !== '/') {
+      destroyScrollAnimations();
+      isHomePage = false;
+    }
+    
     const component = routes[path] || routes['/'];
     app.innerHTML = component();
+    
+    // Initialize animations for home page
+    if (path === '/') {
+      // Use setTimeout to ensure DOM is fully rendered
+      setTimeout(() => {
+        if (!isHomePage) {
+          initScrollAnimations();
+          isHomePage = true;
+        } else {
+          // If already initialized, just refresh animations for new elements
+          initAnimations();
+        }
+      }, 0);
+    }
   }
   
   // Set up event delegation once (event delegation works even after innerHTML changes)

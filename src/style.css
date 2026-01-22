@@ -845,3 +845,53 @@ body {
     margin: 1rem 0;
   }
 }
+
+/* Horizontal Scroll Styles */
+.horizontal-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.horizontal-sections {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200vw; /* 2 sections × 100vw (viewport width) */
+  height: 100%;
+}
+
+.horizontal-sections .panel {
+  width: 100vw; /* Each panel takes full viewport width */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+/* Horizontal Scroll Styles 2 (Services) */
+.horizontal-container-2 {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.horizontal-sections-2 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 300vw; /* 3 sections × 100vw (viewport width) */
+  height: 100%;
+}
+
+.horizontal-sections-2 .panel-2 {
+  width: 100vw; /* Each panel takes full viewport width */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+}

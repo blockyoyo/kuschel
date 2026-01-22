@@ -64,7 +64,7 @@ export function Home() {
     </section>
 
   <!-- Section 2 -->
-  <section class="content-section" data-animate="parallaxReveal">
+  <section class="content-section" >
     <h2 class="section-title">Services</h2>
      <h2 class="hero-text">
       Full Grooming
@@ -89,7 +89,7 @@ export function Home() {
   </section>
 
   <!-- Section 3 -->
-  <section class="content-section" data-animate="parallaxFade">
+  <section class="content-section" >
     <h2 class="section-title">First Grooming for Adopted Dogs</h2>
     <p class="section-text">
       A dedicated first grooming visit for dogs adopted from shelters, <br>
@@ -105,7 +105,7 @@ export function Home() {
   </section>
 
   <!-- Section 4 -->
-  <section class="content-section" data-animate="fadeIn">
+  <section class="content-section" >
     <h2 class="section-title">Maintenance</h2>
     <p class="section-text">
       A service between full grooming sessions.Includes washing, drying, <br> 
@@ -128,7 +128,7 @@ export function Home() {
   </section>
 
   <!-- Section 5 -->
-   <section class="content-section" data-animate="scaleRotate">
+   <section class="content-section" >
     <h2 class="section-title">Puppy Adaptation</h2>
     <p class="section-text">
       A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 

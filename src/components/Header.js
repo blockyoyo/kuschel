@@ -9,6 +9,7 @@ export function Header() {
       <div class="header-right">
         <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
         <button class="cta-button">BOOK A SLOT</button>
+        <button class="info-button">QUICK INFO</button>
       </div>
     </header>
   `;

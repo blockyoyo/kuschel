@@ -46,20 +46,22 @@ export function Home() {
 
  
 
-    <!-- Section 1 -->
-    <section class="content-section" data-animate="parallaxReveal" >
-    <h2 class="section-title">Support for Shelter Dogs</h2>
-    <p class="section-text">
-     With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
-     is free with extra time, gentle care and a calm start.
-    </p>
-    <button class="cta-button-large">Book your appointment now</button>
-   
-  </section>
+    <!-- Shelter Section Wrapper -->
+    <section class="shelter-wrapper">
+      <!-- Section 1 -->
+      <section class="content-section shelter-content" id="shelter-initial-content">
+        <h2 class="section-title">Support for Shelter Dogs</h2>
+        <p class="section-text">
+         With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
+         is free with extra time, gentle care and a calm start.
+        </p>
+        <button class="cta-button-large">Book your appointment now</button>
+      </section>
 
-   <div class="image-section" id="pushing-image" data-animate="imagePush">
+      <div class="image-section" id="pushing-image-left" data-animate="imagePushLeft">
         <img src="/2.jpg" alt="Test image" class="test-image" />
       </div>
+    </section>
 
   <!-- Section 2 -->
   <section class="content-section" data-animate="parallaxReveal">
@@ -103,7 +105,7 @@ export function Home() {
   </section>
 
   <!-- Section 4 -->
-  <section class="content-section" data-animate="slideUpRotate">
+  <section class="content-section" data-animate="fadeIn">
     <h2 class="section-title">Maintenance</h2>
     <p class="section-text">
       A service between full grooming sessions.Includes washing, drying, <br> 
@@ -166,8 +168,7 @@ export function Home() {
     
     <!-- Customer Reviews -->
     <div class="email-screenshots">
-      <div class="blob blob-purple"></div>
-      <div class="blob blob-blue"></div>
+      
       <div class="screenshot-grid">
         <div class="email-card">
           <div class="email-header">

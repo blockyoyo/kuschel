@@ -16,7 +16,7 @@ export function initLenis() {
   }
 
   lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.7,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     gestureOrientation: 'vertical',
@@ -88,30 +88,28 @@ export function initAnimations() {
     });
   });
 
-  // STEP 1: Handle custom image push animation (FIRST - appears first in DOM)
+  // Handle custom image push animation 
   const pushingImage = document.querySelector('#pushing-image');
   const heroInitialContent = document.querySelector('#hero-initial-content');
   const heroContentAfter = document.querySelector('#content-after-image');
   const heroWrapper = document.querySelector('.hero-wrapper');
   
   if (pushingImage && heroInitialContent && heroWrapper) {
-    // Set initial state - image off screen to the right
-    gsap.set(pushingImage, { x: '100vw' });
+    // Set initial state 
+    gsap.set(pushingImage, { x: '100vw', opacity: 1 });
     
-    // Simple push animation: push content left, bring image in from right
-    // Pin the hero wrapper during the push animation + hold period
-    const pauseDuration = window.innerHeight; // Hold the image for one viewport height of scroll
+    // Simple push animation
+    const pauseDuration = window.innerHeight; 
     const pushTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: heroWrapper,
         start: 'top top',
-        // Extend end to include pause period after push animation
         end: () => `+=${heroInitialContent.offsetHeight + pauseDuration}`,
         scrub: 1,
         scroller: document.body,
         pin: true,
         pinSpacing: true,
-        refreshPriority: 1, // Highest priority - appears first
+        refreshPriority: 1, 
         onLeave: () => {
           // When pinning ends, add class to change positioning so image scrolls naturally
           pushingImage.classList.add('scroll-away');
@@ -122,9 +120,71 @@ export function initAnimations() {
     .to(heroInitialContent, {
       x: '-100vw',
       ease: 'none',
-      duration: 0.5 // Push happens in first half of timeline
+      duration: 0.5 
     }, 0)
     .to(pushingImage, {
+      x: 0,
+      ease: 'none',
+      duration: 0.5 
+    }, 0)
+    // Add pause 
+    .to({}, { duration: 1, ease: 'none' });
+
+    // Pin ends, animate image scrolling and fading out
+    gsap.to(pushingImage, {
+      y: -window.innerHeight,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroWrapper,
+        start: 'bottom top',
+        end: () => `bottom+=${window.innerHeight} top`,
+        scrub: 1,
+        scroller: document.body,
+        refreshPriority: 1.5, 
+        onEnter: () => {
+          pushingImage.classList.add('scroll-away');
+        }
+      }
+    });
+  }
+
+  // STEP 1b: Handle second image push animation (pushes from LEFT)
+  const pushingImageLeft = document.querySelector('#pushing-image-left');
+  const shelterInitialContent = document.querySelector('#shelter-initial-content');
+  const shelterWrapper = document.querySelector('.shelter-wrapper');
+  
+  if (pushingImageLeft && shelterInitialContent && shelterWrapper) {
+    // Set initial state - image off screen to the left
+    gsap.set(pushingImageLeft, { x: '-100vw' });
+    
+    // Push animation: push content right, bring image in from left
+    // Pin the shelter wrapper during the push animation + hold period
+    const shelterPauseDuration = window.innerHeight; // Hold the image for one viewport height of scroll
+    const shelterPushTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: shelterWrapper,
+        start: 'top top',
+        // Extend end to include pause period after push animation
+        end: () => `+=${shelterInitialContent.offsetHeight + shelterPauseDuration}`,
+        scrub: 1,
+        scroller: document.body,
+        pin: true,
+        pinSpacing: true,
+        refreshPriority: 0.5, // After hero animation
+        onLeave: () => {
+          // When pinning ends, add class to change positioning so image scrolls naturally
+          pushingImageLeft.classList.add('scroll-away');
+          gsap.set(pushingImageLeft, { x: 0, y: 0 });
+        }
+      }
+    })
+    .to(shelterInitialContent, {
+      x: '100vw', // Push to the right (opposite of hero)
+      ease: 'none',
+      duration: 0.5 // Push happens in first half of timeline
+    }, 0)
+    .to(pushingImageLeft, {
       x: 0,
       ease: 'none',
       duration: 0.5 // Image comes in during first half
@@ -133,20 +193,18 @@ export function initAnimations() {
     .to({}, { duration: 1, ease: 'none' });
 
     // After pin ends, animate image scrolling up and out of view
-    // This trigger starts when the wrapper's bottom reaches the top of viewport
-    gsap.to(pushingImage, {
+    gsap.to(pushingImageLeft, {
       y: -window.innerHeight,
       ease: 'none',
       scrollTrigger: {
-        trigger: heroWrapper,
+        trigger: shelterWrapper,
         start: 'bottom top',
         end: () => `bottom+=${window.innerHeight} top`,
         scrub: 1,
         scroller: document.body,
-        refreshPriority: 1.5, // Between push and content-after
+        refreshPriority: 0.6,
         onEnter: () => {
-          // Ensure class is added when this trigger activates
-          pushingImage.classList.add('scroll-away');
+          pushingImageLeft.classList.add('scroll-away');
         }
       }
     });
@@ -185,7 +243,7 @@ export function initAnimations() {
   const animationPresets = {
     // Parallax reveal with rotation
     parallaxReveal: {
-      from: { opacity: 0, y: 100, x: -2000, rotation: -1, scale: 0.9 },
+      from: { opacity: 0, y: 100, x: -1000, rotation: -1, scale: 0.9 },
       to: { 
         opacity: 1, 
         y: 0, 
@@ -383,7 +441,7 @@ export function initAnimations() {
     const animationType = element.getAttribute('data-animate');
     
     // Skip custom animations handled separately
-    if (animationType === 'imagePush') {
+    if (animationType === 'imagePush' || animationType === 'imagePushLeft') {
       return;
     }
     

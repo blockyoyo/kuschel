@@ -74,10 +74,10 @@ body {
 
 .logo_text {
   position: absolute;
-  top: 60px;
+  top: 80px;
   right: 220px;
   padding-bottom: 3rem;
-  width: 270px;
+  width: 190px;
   height: auto;
   z-index: 10;
 }

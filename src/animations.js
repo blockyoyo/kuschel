@@ -88,145 +88,7 @@ export function initAnimations() {
     });
   });
 
-  // Handle custom image push animation 
-  const pushingImage = document.querySelector('#pushing-image');
-  const heroInitialContent = document.querySelector('#hero-initial-content');
-  const heroContentAfter = document.querySelector('#content-after-image');
-  const heroWrapper = document.querySelector('.hero-wrapper');
-  
-  if (pushingImage && heroInitialContent && heroWrapper) {
-    // Set initial state 
-    gsap.set(pushingImage, { x: '100vw', opacity: 1 });
-    
-    // Simple push animation
-    const pauseDuration = window.innerHeight; 
-    const pushTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroWrapper,
-        start: 'top top',
-        end: () => `+=${heroInitialContent.offsetHeight + pauseDuration}`,
-        scrub: 1,
-        scroller: document.body,
-        pin: true,
-        pinSpacing: true,
-        refreshPriority: 1, 
-        onLeave: () => {
-          // When pinning ends, add class to change positioning so image scrolls naturally
-          pushingImage.classList.add('scroll-away');
-          gsap.set(pushingImage, { x: 0, y: 0 });
-        }
-      }
-    })
-    .to(heroInitialContent, {
-      x: '-100vw',
-      ease: 'none',
-      duration: 0.5 
-    }, 0)
-    .to(pushingImage, {
-      x: 0,
-      ease: 'none',
-      duration: 0.5 
-    }, 0)
-    // Add pause 
-    .to({}, { duration: 1, ease: 'none' });
-
-    // Pin ends, animate image scrolling and fading out
-    gsap.to(pushingImage, {
-      y: -window.innerHeight,
-      opacity: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: heroWrapper,
-        start: 'bottom top',
-        end: () => `bottom+=${window.innerHeight} top`,
-        scrub: 1,
-        scroller: document.body,
-        refreshPriority: 1.5, 
-        onEnter: () => {
-          pushingImage.classList.add('scroll-away');
-        }
-      }
-    });
-  }
-
-  // STEP 1b: Handle second image push animation (pushes from LEFT)
-  const pushingImageLeft = document.querySelector('#pushing-image-left');
-  const shelterInitialContent = document.querySelector('#shelter-initial-content');
-  const shelterWrapper = document.querySelector('.shelter-wrapper');
-  
-  if (pushingImageLeft && shelterInitialContent && shelterWrapper) {
-    // Set initial state - image off screen to the left
-    gsap.set(pushingImageLeft, { x: '-100vw' });
-    
-    // Push animation: push content right, bring image in from left
-    // Pin the shelter wrapper during the push animation + hold period
-    const shelterPauseDuration = window.innerHeight; // Hold the image for one viewport height of scroll
-    const shelterPushTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: shelterWrapper,
-        start: 'top top',
-        // Extend end to include pause period after push animation
-        end: () => `+=${shelterInitialContent.offsetHeight + shelterPauseDuration}`,
-        scrub: 1,
-        scroller: document.body,
-        pin: true,
-        pinSpacing: true,
-        refreshPriority: 0.5, // After hero animation
-        onLeave: () => {
-          // When pinning ends, add class to change positioning so image scrolls naturally
-          pushingImageLeft.classList.add('scroll-away');
-          gsap.set(pushingImageLeft, { x: 0, y: 0 });
-        }
-      }
-    })
-    .to(shelterInitialContent, {
-      x: '100vw', // Push to the right (opposite of hero)
-      ease: 'none',
-      duration: 0.5 // Push happens in first half of timeline
-    }, 0)
-    .to(pushingImageLeft, {
-      x: 0,
-      ease: 'none',
-      duration: 0.5 // Image comes in during first half
-    }, 0)
-    // Add pause - image holds in place for second half of timeline
-    .to({}, { duration: 1, ease: 'none' });
-
-    // After pin ends, animate image scrolling up and out of view
-    gsap.to(pushingImageLeft, {
-      y: -window.innerHeight,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: shelterWrapper,
-        start: 'bottom top',
-        end: () => `bottom+=${window.innerHeight} top`,
-        scrub: 1,
-        scroller: document.body,
-        refreshPriority: 0.6,
-        onEnter: () => {
-          pushingImageLeft.classList.add('scroll-away');
-        }
-      }
-    });
-  }
-
-  // STEP 2: Fade in content after image (SECOND - appears right after image in DOM)
-  if (heroContentAfter) {
-    gsap.set(heroContentAfter, { opacity: 0 });
-    gsap.to(heroContentAfter, {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: heroContentAfter,
-        start: 'top 60%',
-        end: 'top 40%',
-        toggleActions: 'play none none reverse',
-        scroller: document.body,
-        refreshPriority: 2, // Second priority - appears after image
-      }
-    });
-  }
-
-  // STEP 3: Setup parallax effects for elements with data-parallax attribute
+  // Setup parallax effects for elements with data-parallax attribute
   const parallaxElements = document.querySelectorAll('[data-parallax]');
   parallaxElements.forEach((element) => {
     // Kill existing parallax triggers for this element
@@ -434,16 +296,11 @@ export function initAnimations() {
     },
   };
 
-  // STEP 4: Setup all other data-animate elements (in DOM order)
+  // Setup all data-animate elements (in DOM order)
   const animatedElements = document.querySelectorAll('[data-animate]');
 
   animatedElements.forEach((element) => {
     const animationType = element.getAttribute('data-animate');
-    
-    // Skip custom animations handled separately
-    if (animationType === 'imagePush' || animationType === 'imagePushLeft') {
-      return;
-    }
     
     const preset = animationPresets[animationType];
 
@@ -487,9 +344,7 @@ export function initAnimations() {
     }
   });
 
-  // STEP 5: Sort all ScrollTriggers by their start position to ensure correct order
-  // This ensures that even if triggers were created out of order, they're refreshed
-  // in the correct sequence based on their actual position on the page
+  // Sort all ScrollTriggers by their start position to ensure correct order
   ScrollTrigger.sort();
 }
 

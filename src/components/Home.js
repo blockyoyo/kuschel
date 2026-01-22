@@ -6,27 +6,26 @@ export function Home() {
     ${Header()}
     
     <!-- Hero Section -->
-    <section class="hero-wrapper">
-      <div class="hero-content" id="hero-initial-content">
-        <br>
-        <br>
+    <section class="hero-content" id="hero-initial-content">
+      <br>
+      <br>
 
-        <p class="hero-text">
-          Located in Am Glockenbach 11, in the heart of Munich. <br>
-          Kuscheltier is a calm, grooming space designed to feel safe, <br>
-          quiet, and comfortable for every dog.
-        </p>
-        <p class="hero-text">
-          Making a difference.
-        </p>
-        <h2 class="section-title">
-          One Dog at a Time.
-        </h2>
-      </div>
-      
-      <div class="image-section" id="pushing-image" data-animate="imagePush">
-        <img src="/1.jpg" alt="Test image" class="test-image" />
-      </div>
+      <p class="hero-text">
+        Located in Am Glockenbach 11, in the heart of Munich. <br>
+        Kuscheltier is a calm, grooming space designed to feel safe, <br>
+        quiet, and comfortable for every dog.
+      </p>
+      <p class="hero-text">
+        Making a difference.
+      </p>
+      <h2 class="section-title">
+        One Dog at a Time.
+      </h2>
+    </section>
+
+    <!-- Full Screen Image 1 -->
+    <section class="fullscreen-image">
+      <img src="/1.jpg" alt="Dog grooming" />
     </section>
 
     <!-- Content After Image -->
@@ -44,23 +43,21 @@ export function Home() {
       </p>
     </section>
 
- 
+    
 
-    <!-- Shelter Section Wrapper -->
-    <section class="shelter-wrapper">
-      <!-- Section 1 -->
-      <section class="content-section shelter-content" id="shelter-initial-content">
-        <h2 class="section-title">Support for Shelter Dogs</h2>
-        <p class="section-text">
-         With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
-         is free with extra time, gentle care and a calm start.
-        </p>
-        <button class="cta-button-large">Book your appointment now</button>
-      </section>
+    <!-- Shelter Section -->
+    <section class="content-section shelter-content" id="shelter-initial-content">
+      <h2 class="section-title">Support for Shelter Dogs</h2>
+      <p class="section-text">
+       With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
+       is free with extra time, gentle care and a calm start.
+      </p>
+      <button class="cta-button-large">Book your appointment now</button>
+    </section>
 
-      <div class="image-section" id="pushing-image-left" data-animate="imagePushLeft">
-        <img src="/2.jpg" alt="Test image" class="test-image" />
-      </div>
+    <!-- Full Screen Image 2 -->
+    <section class="fullscreen-image">
+      <img src="/2.jpg" alt="Dog grooming" />
     </section>
 
   <!-- Section 2 -->
@@ -88,21 +85,7 @@ export function Home() {
    
   </section>
 
-  <!-- Section 3 -->
-  <section class="content-section" >
-    <h2 class="section-title">First Grooming for Adopted Dogs</h2>
-    <p class="section-text">
-      A dedicated first grooming visit for dogs adopted from shelters, <br>
-      with extra time to build trust and introduce the process calmly.
-    </p>
-    <p class="section-text">
-      Free
-    </p>
-    <p class="section-text">
-      <b>Duration: up to 4 hours</b>
-    </p>
-    
-  </section>
+
 
   <!-- Section 4 -->
   <section class="content-section" >
@@ -147,6 +130,11 @@ export function Home() {
   
     
   </section>
+
+  <!-- Full Screen Image 3 -->
+    <section class="fullscreen-image">
+      <img src="/3.jpg" alt="Dog grooming" />
+    </section>
 
   <!-- Features Grid -->
   <section class="features-section" data-animate="staggerReveal">
@@ -251,6 +239,11 @@ export function Home() {
       </div>
     </div>
   </section>
+
+  <!-- Full Screen Image 4 -->
+    <section class="fullscreen-image">
+      <img src="/3.jpg" alt="Dog grooming" />
+    </section>
 
   <!-- FAQ Section -->
   <section class="faq-section" >

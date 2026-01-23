@@ -469,3 +469,80 @@ export function hideInfoPopup() {
     }
   });
 }
+
+// Location Popup Animation
+export function showLocationPopup() {
+  const overlay = document.querySelector('.location-popup-overlay');
+  const container = document.querySelector('.location-popup-container');
+  const content = document.querySelector('.location-popup-content');
+  const closeButton = document.querySelector('.location-popup-close');
+
+  console.log('showLocationPopup called', { overlay, container, closeButton });
+  
+  if (!overlay || !container) {
+    console.error('Location popup elements not found');
+    return;
+  }
+
+  // Make overlay visible
+  overlay.classList.add('active');
+
+  // Create timeline for popup animation
+  const tl = gsap.timeline({ 
+    defaults: { duration: 0.75, ease: "power3.inOut" }
+  });
+
+  // 1. Scale in container (elastic bounce effect)
+  tl.fromTo(
+    container,
+    { scale: 0.2, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }
+  );
+
+  // 2. Fade in content
+  if (content) {
+    tl.fromTo(
+      content,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6 },
+      "<0.3"
+    );
+  }
+
+  // 3. Fade in close button
+  if (closeButton) {
+    tl.fromTo(
+      closeButton,
+      { scale: 0, opacity: 0, rotation: -90 },
+      { scale: 1, opacity: 1, rotation: 0, duration: 0.3 },
+      "<0.1"
+    );
+  }
+
+  return tl;
+}
+
+export function hideLocationPopup() {
+  const overlay = document.querySelector('.location-popup-overlay');
+  const container = document.querySelector('.location-popup-container');
+
+  console.log('hideLocationPopup called', { overlay, container });
+  
+  if (!overlay || !container) {
+    console.error('Location popup elements not found for hiding');
+    return;
+  }
+
+  // Animate out
+  gsap.to(container, {
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    onComplete: () => {
+      overlay.classList.remove('active');
+      // Reset for next time
+      gsap.set(container, { scale: 0.2, opacity: 0 });
+    }
+  });
+}

@@ -2,11 +2,14 @@ import { Home } from "./components/Home.js";
 import { Contact } from "./components/Contact.js";
 import { Privacy } from "./components/Privacy.js";
 import { Legal } from "./components/Legal.js";
+import { Info } from "./components/Info.js";
 import {
   initScrollAnimations,
   destroyScrollAnimations,
   initAnimations,
   hidePreloader,
+  showInfoPopup,
+  hideInfoPopup,
 } from "./animations.js";
 
 const routes = {
@@ -30,6 +33,14 @@ export function router() {
 
     const component = routes[path] || routes["/"];
     app.innerHTML = component();
+    
+    // Inject Info popup after component render (ensure it's always present)
+    const existingPopup = document.querySelector('.info-popup-overlay');
+    if (!existingPopup) {
+      const infoPopupHTML = Info();
+      document.body.insertAdjacentHTML('beforeend', infoPopupHTML);
+      console.log('Info popup injected');
+    }
 
     // Initialize animations for home page
     if (path === "/") {
@@ -77,6 +88,13 @@ export function router() {
 
   // Set up event delegation once (event delegation works even after innerHTML changes)
   app.addEventListener("click", (e) => {
+    // Info button functionality
+    if (e.target.closest(".info-button")) {
+      e.preventDefault();
+      showInfoPopup();
+      return;
+    }
+
     // FAQ toggle functionality
     if (e.target.closest(".faq-question")) {
       const question = e.target.closest(".faq-question");
@@ -100,6 +118,78 @@ export function router() {
       if (href && href.startsWith("/") && !href.startsWith("//")) {
         e.preventDefault();
         navigate(href);
+      }
+    }
+  });
+
+  // Set up Info popup event handlers (use capture phase for better reliability)
+  document.addEventListener("click", (e) => {
+    // Close popup when clicking close button (check this first)
+    const closeButton = e.target.closest(".info-popup-close");
+    if (closeButton) {
+      console.log('Close button clicked');
+      hideInfoPopup();
+      return;
+    }
+
+    // Close popup when clicking overlay
+    if (e.target.classList.contains("info-popup-overlay")) {
+      console.log('Overlay clicked');
+      hideInfoPopup();
+      return;
+    }
+
+    // Handle Info popup button actions
+    const actionButton = e.target.closest(".info-popup-button");
+    if (actionButton) {
+      const action = actionButton.getAttribute("data-action");
+
+      switch (action) {
+        case "price":
+          hideInfoPopup();
+          // Scroll to services section or navigate to pricing
+          if (window.location.pathname === "/") {
+            // Find the services section and scroll to it
+            setTimeout(() => {
+              const servicesSection = document.querySelector(".horizontal-container-2");
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 300);
+          } else {
+            // Navigate to home page if not already there
+            navigate("/");
+            setTimeout(() => {
+              const servicesSection = document.querySelector(".horizontal-container-2");
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 500);
+          }
+          break;
+
+        case "call":
+          hideInfoPopup();
+          // Trigger phone call
+          window.location.href = "tel:+491627001514";
+          break;
+
+        case "location":
+          hideInfoPopup();
+          // Navigate to contact page or open maps
+          if (window.location.pathname === "/contact") {
+            // Already on contact page, scroll to map
+            setTimeout(() => {
+              const mapSection = document.querySelector(".map-container");
+              if (mapSection) {
+                mapSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 300);
+          } else {
+            // Navigate to contact page
+            navigate("/contact");
+          }
+          break;
       }
     }
   });

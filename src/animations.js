@@ -368,3 +368,104 @@ export function destroyScrollAnimations() {
 
   isInitialized = false;
 }
+
+// Info Popup Animation
+export function showInfoPopup() {
+  const overlay = document.querySelector('.info-popup-overlay');
+  const container = document.querySelector('.info-popup-container');
+  const logo = document.querySelector('.info-logo');
+  const content = document.querySelector('.info-content');
+  const buttons = document.querySelectorAll('.info-popup-button');
+  const closeButton = document.querySelector('.info-popup-close');
+
+  console.log('showInfoPopup called', { overlay, container, closeButton });
+  
+  if (!overlay || !container) {
+    console.error('Popup elements not found');
+    return;
+  }
+
+  // Make overlay visible
+  overlay.classList.add('active');
+
+  // Create timeline for popup animation
+  const tl = gsap.timeline({ 
+    defaults: { duration: 0.75, ease: "power3.inOut" }
+  });
+
+  // 1. Scale in container (elastic bounce effect)
+  tl.fromTo(
+    container,
+    { scale: 0.2, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 1.5, ease: "elastic.out(1, 0.5)" }
+  );
+
+  // 2. Slide in content from right
+  tl.fromTo(
+    content,
+    { x: 300, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.75 },
+    "<0.3"
+  );
+
+  // 3. Rotate and slide in logo
+  tl.fromTo(
+    logo,
+    { rotation: 180, x: -100, opacity: 0 },
+    { rotation: 360, x: 0, opacity: 1, duration: 0.75 },
+    "<"
+  );
+
+  // 4. Logo jump
+  tl.fromTo(
+    logo,
+    { y: 0 },
+    { y: -15, duration: 0.5, ease: "elastic.out(1, 0.3)" },
+    "<0.5"
+  );
+
+  // 5. Stagger buttons
+  tl.fromTo(
+    buttons,
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.4, stagger: 0.1 },
+    "<0.2"
+  );
+
+  // 6. Fade in close button
+  if (closeButton) {
+    tl.fromTo(
+      closeButton,
+      { scale: 0, opacity: 0, rotation: -90 },
+      { scale: 1, opacity: 1, rotation: 0, duration: 0.3 },
+      "<0.1"
+    );
+  }
+
+  return tl;
+}
+
+export function hideInfoPopup() {
+  const overlay = document.querySelector('.info-popup-overlay');
+  const container = document.querySelector('.info-popup-container');
+
+  console.log('hideInfoPopup called', { overlay, container });
+  
+  if (!overlay || !container) {
+    console.error('Popup elements not found for hiding');
+    return;
+  }
+
+  // Animate out
+  gsap.to(container, {
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    onComplete: () => {
+      overlay.classList.remove('active');
+      // Reset for next time
+      gsap.set(container, { scale: 0.2, opacity: 0 });
+    }
+  });
+}

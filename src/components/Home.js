@@ -2,6 +2,7 @@ import { Header } from "./Header.js";
 import { Footer } from "./Footer.js";
 
 export function Home() {
+  window.scrollTo(0, 0);
   return `
     ${Header()}
     

@@ -196,6 +196,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  will-change: transform;
 }
 
 .hero {

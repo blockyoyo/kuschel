@@ -6,6 +6,7 @@ import {
   initScrollAnimations,
   destroyScrollAnimations,
   initAnimations,
+  hidePreloader,
 } from "./animations.js";
 
 const routes = {
@@ -18,6 +19,7 @@ const routes = {
 export function router() {
   const app = document.querySelector("#app");
   let isHomePage = false;
+  let isInitialLoad = true;
 
   function render(path) {
     // Clean up animations if leaving home page
@@ -41,7 +43,29 @@ export function router() {
           initAnimations();
         }
       }, 0);
+    } else {
+      // For other pages, hide preloader and initialize animations
+      setTimeout(() => {
+        if (isInitialLoad) {
+          // On initial load, wait for window load event
+          if (document.readyState === "complete") {
+            hidePreloader();
+            initAnimations();
+          } else {
+            window.addEventListener("load", () => {
+              hidePreloader();
+              initAnimations();
+            }, { once: true });
+          }
+        } else {
+          // On SPA navigation, hide preloader immediately
+          hidePreloader();
+          initAnimations();
+        }
+      }, 0);
     }
+    
+    isInitialLoad = false;
   }
 
   // Set up event delegation once (event delegation works even after innerHTML changes)

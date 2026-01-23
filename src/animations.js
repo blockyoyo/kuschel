@@ -209,6 +209,28 @@ export function initAnimations() {
   ScrollTrigger.sort();
 }
 
+export function initFullscreenImageAnimations() {
+  const fullscreenImages = document.querySelectorAll(".fullscreen-image img");
+  
+  fullscreenImages.forEach((img) => {
+    // Set initial scale
+    gsap.set(img, { scale: 1.0 });
+    
+    // Create scroll-triggered scale animation
+    gsap.to(img, {
+      scale: 1.05, // Scale up by 5%
+      ease: "none",
+      scrollTrigger: {
+        trigger: img.parentElement, // Use the .fullscreen-image container
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true, // Smooth scrubbing tied to scroll position
+        scroller: document.body,
+      },
+    });
+  });
+}
+
 export function initHorizontalScroll() {
   const sections = gsap.utils.toArray(".horizontal-sections .panel");
 
@@ -262,6 +284,7 @@ export function initPreloader() {
         // Start animations after preloader finishes
         setTimeout(() => {
           initAnimations();
+          initFullscreenImageAnimations();
           initHorizontalScroll();
           initHorizontalScroll2();
         }, 0);
@@ -270,9 +293,29 @@ export function initPreloader() {
   });
 }
 
+// Hide preloader immediately (for SPA navigations or non-home pages)
+export function hidePreloader() {
+  const preloader = document.querySelector(".preloader");
+  if (!preloader) return;
+  
+  // If preloader is already hidden, return
+  if (preloader.style.display === "none") return;
+  
+  // Hide preloader immediately for SPA navigations
+  gsap.to(".preloader", {
+    yPercent: 100,
+    duration: 0.5,
+    ease: "power2.inOut",
+    onComplete: () => {
+      preloader.style.display = "none";
+    },
+  });
+}
+
 export function initScrollAnimations() {
   if (isInitialized) {
     initAnimations();
+    initFullscreenImageAnimations();
     initHorizontalScroll();
     initHorizontalScroll2();
     return;

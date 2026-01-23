@@ -1,7 +1,8 @@
-import { Header } from './Header.js';
-import { Footer } from './Footer.js';
+import { Header } from "./Header.js";
+import { Footer } from "./Footer.js";
 
 export function Privacy() {
+  window.scrollTo(0, 0);
   return `
     ${Header()}
     
@@ -73,7 +74,7 @@ export function Privacy() {
           <h3 class="hero-text">7. Updates</h3>
           <p class="section-text">
             We may update this Privacy Policy from time to time. The most current version will always be available on this page.
-            Last updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            Last updated: ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Barrio&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Barrio&display=swap");
 
 .agdasima-regular {
   font-family: "Agdasima", sans-serif;
@@ -19,7 +19,6 @@
   font-style: normal;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +34,7 @@
 }
 
 body {
-  font-family: 'Agdasima', sans-serif;
+  font-family: "Agdasima", sans-serif;
   font-size: 18px;
   background-color: #ffffff;
   color: var(--text-dark);
@@ -54,7 +53,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   padding: 0.4rem 2rem;
   position: relative;
 }
@@ -63,6 +62,13 @@ body {
   padding: 10px;
   width: 220px;
   height: 220px;
+}
+
+.logo:hover {
+  padding: 10px;
+  width: 220px;
+  height: 220px;
+  transform: translateY(-2px);
 }
 
 .header-right {
@@ -90,7 +96,9 @@ body {
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   letter-spacing: 0.05em;
 }
 
@@ -110,7 +118,9 @@ body {
   font-weight: 600;
   font-size: 0.575rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   letter-spacing: 0.05em;
 }
 /* Hero Section */
@@ -251,9 +261,11 @@ body {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   margin: 2rem auto; /* Center horizontally */
-  display: block;    /* Ensures centering with margin auto */
+  display: block; /* Ensures centering with margin auto */
 }
 
 .cta-button-large:hover {
@@ -640,7 +652,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Agdasima', sans-serif;
+  font-family: "Agdasima", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -652,7 +664,6 @@ body {
 }
 
 .faq-question span:first-child {
-  
   flex: 1;
   text-align: left;
 }
@@ -673,7 +684,9 @@ body {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  transition:
+    max-height 0.3s ease-out,
+    padding 0.3s ease-out;
   padding: 0 1.5rem;
 }
 
@@ -763,8 +776,6 @@ body {
     align-items: flex-start;
   }
 }
-
-
 
 @media (max-width: 480px) {
   .header {

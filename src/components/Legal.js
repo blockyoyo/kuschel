@@ -1,7 +1,8 @@
-import { Header } from './Header.js';
-import { Footer } from './Footer.js';
+import { Header } from "./Header.js";
+import { Footer } from "./Footer.js";
 
 export function Legal() {
+  window.scrollTo(0, 0);
   return `
     ${Header()}
     

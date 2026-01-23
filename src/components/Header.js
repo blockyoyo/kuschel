@@ -7,7 +7,6 @@ export function Header() {
         </a>
       </div>
       <div class="header-right">
-        <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text header-animate-item" /> 
         <button class="cta-button header-animate-item">BOOK A SLOT</button>
         <button class="info-button header-animate-item">QUICK INFO</button>
       </div>

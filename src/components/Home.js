@@ -10,17 +10,20 @@ export function Home() {
       <br>
       <br>
 
+             <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text header-animate-item" /> 
+
       <p class="hero-text">
+        Making a difference.
+      </p>
+      <h2 class="section-title-hero words-slide-from-right">
+        <span class="word">One</span> <span class="word">Dog</span> <span class="word">at</span> 
+        <span class="word">a</span> <span class="word">Time.</span>
+      </h2>
+       <p class="hero-text-location">
         Located in Am Glockenbach 11, in the heart of Munich. <br>
         Kuscheltier is a calm, grooming space designed to feel safe, <br>
         quiet, and comfortable for every dog.
       </p>
-      <p class="hero-text">
-        Making a difference.
-      </p>
-      <h2 class="section-title words-slide-from-right">
-        <span class="word">One</span> <span class="word">Dog</span> <span class="word">at</span> <span class="word">a</span> <span class="word">Time.</span>
-      </h2>
     </section>
 
     <!-- Full Screen Image 1 -->

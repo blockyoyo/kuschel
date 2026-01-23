@@ -112,6 +112,40 @@ export function initAnimations() {
     });
   });
 
+  // Word slide from right animation
+  const wordsSlideFromRightElements = document.querySelectorAll(
+    ".words-slide-from-right",
+  );
+  wordsSlideFromRightElements.forEach((element) => {
+    const tl = gsap.timeline({ paused: true });
+    const words = element.querySelectorAll(".word");
+    tl.from(words, {
+      opacity: 0,
+      x: "2em",
+      rotationX: 50,
+      duration: 3,
+      ease: "power2.out",
+      stagger: { amount: 1 },
+    });
+
+    tl.to(
+      words,
+      {
+        rotation: 0,
+        duration: 3,
+        ease: "power2.out",
+        stagger: { amount: 2 },
+      },
+      0,
+    );
+
+    ScrollTrigger.create({
+      trigger: element,
+      onEnter: () => tl.play(),
+      once: true,
+    });
+  });
+
   ScrollTrigger.sort();
 }
 
@@ -121,7 +155,7 @@ export function initHorizontalScroll() {
   if (sections.length === 0) return;
 
   return gsap.to(sections, {
-    xPercent: -180 * (sections.length - 1),
+    xPercent: -150 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
       trigger: ".horizontal-container",
@@ -139,7 +173,7 @@ export function initHorizontalScroll2() {
   if (sections.length === 0) return;
 
   return gsap.to(sections, {
-    xPercent: -177 * (sections.length - 1),
+    xPercent: -145 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
       trigger: ".horizontal-container-2",

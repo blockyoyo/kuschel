@@ -18,8 +18,8 @@ export function Home() {
       <p class="hero-text">
         Making a difference.
       </p>
-      <h2 class="section-title">
-        One Dog at a Time.
+      <h2 class="section-title words-slide-from-right">
+        <span class="word">One</span> <span class="word">Dog</span> <span class="word">at</span> <span class="word">a</span> <span class="word">Time.</span>
       </h2>
     </section>
 

@@ -117,33 +117,52 @@ export function initAnimations() {
     ".words-slide-from-right",
   );
   wordsSlideFromRightElements.forEach((element) => {
-    const tl = gsap.timeline({ paused: true });
     const words = element.querySelectorAll(".word");
-    tl.from(words, {
-      opacity: 0,
-      x: "2em",
+
+    // Set initial state immediately so words start invisible
+    gsap.set(words, { 
+      opacity: 0, 
+      x: "2em", 
       rotationX: 50,
-      duration: 3,
-      ease: "power2.out",
-      stagger: { amount: 1 },
+      rotationZ: 45,
+      force3D: true 
     });
 
-    tl.to(
-      words,
-      {
-        rotation: 0,
+    // Create and play animation immediately if in view
+    const rect = element.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isInView) {
+      // Element is in view, animate immediately
+      gsap.to(words, {
+        opacity: 1,
+        x: 0,
+        rotationX: 0,
+        rotationZ: 0,
         duration: 3,
         ease: "power2.out",
-        stagger: { amount: 2 },
-      },
-      0,
-    );
-
-    ScrollTrigger.create({
-      trigger: element,
-      onEnter: () => tl.play(),
-      once: true,
-    });
+        stagger: { amount: 1 },
+        force3D: true,
+      });
+    } else {
+      // Element is out of view, use ScrollTrigger
+      ScrollTrigger.create({
+        trigger: element,
+        onEnter: () => {
+          gsap.to(words, {
+            opacity: 1,
+            x: 0,
+            rotationX: 0,
+            rotationZ: 0,
+            duration: 3,
+            ease: "power2.out",
+            stagger: { amount: 1 },
+            force3D: true,
+          });
+        },
+        once: true,
+      });
+    }
   });
 
   ScrollTrigger.sort();
@@ -185,6 +204,31 @@ export function initHorizontalScroll2() {
   });
 }
 
+export function initPreloader() {
+  const preloader = document.querySelector(".preloader");
+  if (!preloader) return;
+
+  const tl = gsap.timeline();
+
+  // Wait for page to load, then animate preloader out
+  window.addEventListener("load", () => {
+    tl.to(".preloader", {
+      yPercent: 100,
+      duration: 2,
+      ease: "power4.inOut",
+      onComplete: () => {
+        preloader.style.display = "none";
+        // Start animations after preloader finishes
+        setTimeout(() => {
+          initAnimations();
+          initHorizontalScroll();
+          initHorizontalScroll2();
+        }, 0);
+      },
+    });
+  });
+}
+
 export function initScrollAnimations() {
   if (isInitialized) {
     initAnimations();
@@ -193,11 +237,9 @@ export function initScrollAnimations() {
     return;
   }
 
+  initPreloader();
   initLenis();
   setupScrollTrigger();
-  initAnimations();
-  initHorizontalScroll();
-  initHorizontalScroll2();
 
   isInitialized = true;
 }

@@ -233,13 +233,16 @@ body {
 }
 
 .hero-text-location {
-
   font-size: 1.25rem;
   line-height: 1.7;
   margin-top: -3.5rem;
   margin-bottom: .1rem;
-
   color: var(--text-dark);
+}
+
+/* Initial state for location text fade-in */
+#hero-initial-content .hero-text-location {
+  opacity: 0;
 }
 
 /* Zoom-in animation only for initial hero content */

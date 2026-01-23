@@ -145,6 +145,22 @@ export function initAnimations() {
     });
   }
 
+  // Location text fade-in animation (last to appear)
+  const locationText = document.querySelector("#hero-initial-content .hero-text-location");
+  if (locationText) {
+    // Calculate delay to ensure it fades in after all other hero animations
+    // Header: 0.2s delay + 1.25s duration = ~1.45s
+    // Hero text: 0.5s delay + 2s duration = ~2.5s
+    // Words: ~1.5-2s after start
+    // So location should start around 2.5-3s
+    gsap.to(locationText, {
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out",
+      delay: 2.8, // Fade in after other hero elements
+    });
+  }
+
   // Word slide from right animation (Osmo-style)
   const wordsSlideFromRightElements = document.querySelectorAll(
     ".words-slide-from-right",

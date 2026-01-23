@@ -66,6 +66,13 @@ body {
   align-items: center;
   padding: 0.4rem 2rem;
   position: relative;
+  overflow: hidden;
+}
+
+.header-animate-item {
+  position: relative;
+  overflow: hidden;
+  visibility: hidden; /* Hide initially until animation runs */
 }
 
 .logo {
@@ -214,6 +221,12 @@ body {
   color: var(--text-dark);
 }
 
+/* Zoom-in animation only for initial hero content */
+#hero-initial-content .hero-text {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
 /* Shelter Section */
 #shelter-initial-content {
   min-height: 100vh;
@@ -238,6 +251,18 @@ body {
   margin-bottom: 2rem;
   color: var(--text-dark);
   line-height: 1.2;
+}
+
+/* Osmo-style text animation */
+.words-slide-from-right {
+  overflow: hidden;
+}
+
+.words-slide-from-right .word {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden; /* Hide initially until animation runs */
 }
 
 .section-text {

@@ -112,20 +112,52 @@ export function initAnimations() {
     });
   });
 
-  // Word slide from right animation
+  // Header animation (Osmo-style)
+  const headerItems = document.querySelectorAll(".header-animate-item");
+  if (headerItems.length > 0) {
+    // Set initial state - header items start below (hidden) and make visible
+    gsap.set(headerItems, { 
+      yPercent: 100,
+      visibility: "visible",
+    });
+
+    // Animate header items immediately (header is always in view)
+    gsap.to(headerItems, {
+      yPercent: 0,
+      duration: 1.25,
+      ease: "expo.out",
+      stagger: 0.05,
+      delay: 0.2, // Small delay after preloader
+    });
+  }
+
+  // Hero text zoom-in animation
+  const heroTexts = document.querySelectorAll("#hero-initial-content .hero-text");
+  if (heroTexts.length > 0) {
+    // Animate hero text zoom in slowly
+    gsap.to(heroTexts, {
+      opacity: 1,
+      scale: 1,
+      duration: 2,
+      ease: "power2.out",
+      stagger: 0.3,
+      delay: 0.5, // Delay after header animation
+    });
+  }
+
+  // Word slide from right animation (Osmo-style)
   const wordsSlideFromRightElements = document.querySelectorAll(
     ".words-slide-from-right",
   );
   wordsSlideFromRightElements.forEach((element) => {
     const words = element.querySelectorAll(".word");
 
-    // Set initial state immediately so words start invisible
+    if (words.length === 0) return;
+
+    // Set initial state - words start below (hidden) and make visible
     gsap.set(words, { 
-      opacity: 0, 
-      x: "2em", 
-      rotationX: 50,
-      rotationZ: 45,
-      force3D: true 
+      yPercent: 100,
+      visibility: "visible",
     });
 
     // Create and play animation immediately if in view
@@ -135,29 +167,22 @@ export function initAnimations() {
     if (isInView) {
       // Element is in view, animate immediately
       gsap.to(words, {
-        opacity: 1,
-        x: 0,
-        rotationX: 0,
-        rotationZ: 0,
-        duration: 3,
-        ease: "power2.out",
-        stagger: { amount: 1 },
-        force3D: true,
+        yPercent: 0,
+        duration: 1.25,
+        ease: "expo.out",
+        stagger: 0.025,
       });
     } else {
       // Element is out of view, use ScrollTrigger
       ScrollTrigger.create({
         trigger: element,
+        start: "top 80%",
         onEnter: () => {
           gsap.to(words, {
-            opacity: 1,
-            x: 0,
-            rotationX: 0,
-            rotationZ: 0,
-            duration: 3,
-            ease: "power2.out",
-            stagger: { amount: 1 },
-            force3D: true,
+            yPercent: 0,
+            duration: 1.25,
+            ease: "expo.out",
+            stagger: 0.025,
           });
         },
         once: true,

@@ -10,7 +10,7 @@ export function Home() {
       <br>
       <br>
 
-             <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text header-animate-item" /> 
+      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text header-animate-item" /> 
 
       <p class="hero-text">
         Making a difference.
@@ -56,7 +56,7 @@ export function Home() {
            With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
            is free with extra time, gentle care and a calm start.
           </p>
-          <button class="cta-button-large">Book your appointment now</button>
+          <button class="cta-button-large">Book your appointment</button>
         </section>
       </div>
     </div>
@@ -119,7 +119,7 @@ export function Home() {
 
       <!-- Section 5 -->
        <section class="content-section panel-2" >
-        <h2 class="section-title">Puppy Adaptation</h2>
+        <h2 class="section-title">Puppy Love</h2>
         <p class="section-text">
           A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
           Designed to create positive associations and build confidence.

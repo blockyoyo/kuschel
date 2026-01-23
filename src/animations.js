@@ -293,6 +293,16 @@ export function initPreloader() {
   });
 }
 
+// Show preloader (for SPA navigation back to home)
+export function showPreloader() {
+  const preloader = document.querySelector(".preloader");
+  if (!preloader) return;
+  
+  // Reset preloader to visible state
+  preloader.style.display = "block";
+  gsap.set(".preloader", { yPercent: 0 });
+}
+
 // Hide preloader immediately (for SPA navigations or non-home pages)
 export function hidePreloader() {
   const preloader = document.querySelector(".preloader");
@@ -300,6 +310,9 @@ export function hidePreloader() {
   
   // If preloader is already hidden, return
   if (preloader.style.display === "none") return;
+  
+  // Kill any existing preloader animations
+  gsap.killTweensOf(".preloader");
   
   // Hide preloader immediately for SPA navigations
   gsap.to(".preloader", {
@@ -312,7 +325,7 @@ export function hidePreloader() {
   });
 }
 
-export function initScrollAnimations() {
+export function initScrollAnimations(skipPreloader = false) {
   if (isInitialized) {
     initAnimations();
     initFullscreenImageAnimations();
@@ -321,7 +334,19 @@ export function initScrollAnimations() {
     return;
   }
 
-  initPreloader();
+  if (!skipPreloader) {
+    initPreloader();
+  } else {
+    // If skipping preloader, immediately hide it and start animations
+    hidePreloader();
+    setTimeout(() => {
+      initAnimations();
+      initFullscreenImageAnimations();
+      initHorizontalScroll();
+      initHorizontalScroll2();
+    }, 0);
+  }
+  
   initLenis();
   setupScrollTrigger();
 

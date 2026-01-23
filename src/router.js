@@ -36,7 +36,14 @@ export function router() {
       // Use setTimeout to ensure DOM is fully rendered
       setTimeout(() => {
         if (!isHomePage) {
-          initScrollAnimations();
+          // First time loading home page or returning from another page
+          if (isInitialLoad) {
+            // Initial page load - use full preloader animation
+            initScrollAnimations(false);
+          } else {
+            // SPA navigation to home - skip preloader
+            initScrollAnimations(true);
+          }
           isHomePage = true;
         } else {
           // If already initialized, just refresh animations for new elements

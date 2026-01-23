@@ -7,7 +7,7 @@ export function Header() {
         </a>
       </div>
       <div class="header-right">
-        <button class="cta-button header-animate-item">BOOK A SLOT</button>
+        <button class="cta-button header-animate-item">BOOK SESSION</button>
         <button class="info-button header-animate-item">QUICK INFO</button>
       </div>
     </header>

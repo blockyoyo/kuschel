@@ -1,5 +1,5 @@
-import { Header } from './Header.js';
-import { Footer } from './Footer.js';
+import { Header } from "./Header.js";
+import { Footer } from "./Footer.js";
 
 export function Home() {
   return `
@@ -25,7 +25,7 @@ export function Home() {
 
     <!-- Full Screen Image 1 -->
     <section class="fullscreen-image">
-      <img src="/1.jpg" alt="Dog grooming" />
+      <img src="/1.webp" alt="Dog grooming" />
     </section>
 
     <!-- Horizontal Scroll Container -->
@@ -60,7 +60,7 @@ export function Home() {
 
     <!-- Full Screen Image 2 -->
     <section class="fullscreen-image">
-      <img src="/2.jpg" alt="Dog grooming" />
+      <img src="/2.webp" alt="Dog grooming" />
     </section>
 
   <!-- Horizontal Scroll Container 2 (Services) -->
@@ -139,7 +139,7 @@ export function Home() {
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
-      <img src="/3.jpg" alt="Dog grooming" />
+      <img src="/3.webp" alt="Dog grooming" />
     </section>
 
   <!-- Features Grid -->
@@ -248,7 +248,7 @@ export function Home() {
 
   <!-- Full Screen Image 4 -->
     <section class="fullscreen-image">
-      <img src="/4.jpg" alt="Dog grooming" />
+      <img src="/4.webp" alt="Dog grooming" />
     </section>
 
   <!-- FAQ Section -->

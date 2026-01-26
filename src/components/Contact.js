@@ -111,22 +111,7 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
-      <!-- Section 3 -->
-      <section class="content-section" >
-        <h2 class="section-title">First Grooming for Adopted Dogs</h2>
-        <p class="section-text">
-          A dedicated first grooming visit for dogs adopted from shelters within the past 30 days, <br>
-          with extra time to build trust and introduce the process calmly. Limited availability.
-        </p>
-        <p class="section-text">
-          Free
-        </p>
-        <p class="section-text">
-          <b>Duration: up to 4 hours</b>
-        </p>
-    
-  </section>
+  
     
     ${Footer()}
   `;

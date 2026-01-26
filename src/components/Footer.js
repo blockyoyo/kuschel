@@ -19,9 +19,9 @@ export function Footer() {
       </div>
       
       <div class="footer-column footer-column-logo">
-        <a href="/" class="footer-logo-link" data-nav>
+        
           <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="footer-logo-img" />
-        </a>
+       
       </div>
     </footer>
   `;

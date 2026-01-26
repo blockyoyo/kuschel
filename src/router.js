@@ -27,6 +27,9 @@ export function router() {
   let isHomePage = false;
   let isInitialLoad = true;
 
+  // Immediately scroll to top on initial load
+  window.scrollTo(0, 0);
+
   // Disable automatic scroll restoration
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -153,7 +156,28 @@ export function router() {
 
       if (href && href.startsWith("/") && !href.startsWith("//")) {
         e.preventDefault();
-        navigate(href);
+        
+        // Check if href contains a hash (e.g., "/#services")
+        const [path, hash] = href.split('#');
+        
+        if (hash) {
+          // Navigate to the page first
+          navigate(path || '/');
+          
+          // Then scroll to the section after a short delay
+          setTimeout(() => {
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+              targetElement.scrollIntoView({ 
+                behavior: "smooth",
+                block: "start"
+              });
+            }
+          }, 300);
+        } else {
+          // Regular navigation without hash
+          navigate(href);
+        }
       }
     }
   });

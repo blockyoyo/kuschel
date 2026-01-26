@@ -7,12 +7,12 @@ export function Header() {
         </a>
       </div>
       
-      <div class="header-right">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#appointments" class="nav-link">Appointments</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+      <div class="header-right header-nav-animate">
+        <a href="/#services" class="nav-link" data-nav>Services</a>
+        <a href="/contact" class="nav-link" data-nav>Appointments</a>
+        <a href="/#faq" class="nav-link" data-nav>FAQ</a>
       </div>
-      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
+      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text logo-text-animate" /> 
 
     </header>
   `;

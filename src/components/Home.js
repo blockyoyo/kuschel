@@ -7,59 +7,40 @@ export function Home() {
     ${Header()}
     
     <!-- Hero Section -->
-    <section class="hero-content" id="hero-initial-content">
-      <br>
-      <br>
-
-      
-
-      <p class="hero-text">
-        Making a difference.
-      </p>
-      <h2 class="section-title-hero words-slide-from-right">
-        <span class="word">One</span> <span class="word">Dog</span> <span class="word">at</span> 
-        <span class="word">a</span> <span class="word">Time.</span>
-      </h2>
-       <p class="hero-text-location">
-        Located in Am Glockenbach 11, in the heart of Munich. <br>
-        Kuscheltier is a calm, grooming space designed to feel safe, <br>
-        quiet, and comfortable for every dog.
-      </p>
+    <section class="hero-content" >
+      <h3 class="section-title">
+        One Dog at a Time.
+      </h3>
+      <p class="hero-text"> Step out of the noise and into the calm. Kuscheltier is a boutique grooming 
+      space where your dog is the sole focus. By removing the rush of the traditional salon, I create a safe, 
+      quiet atmosphere where we can take our time. No waiting, no cages—just a full-service, one-on-one journey 
+      at a gentle, unhurried pace.</p"
+    <br>
     </section>
 
     <!-- Full Screen Image 1 -->
     <section class="fullscreen-image">
-      <img src="/1.webp" alt="Dog grooming" />
+      <img src="/4.webp" alt="Dog grooming" />
     </section>
 
-    <!-- Content After Image -->
-    <section class="hero-content hero-content-after" id="content-after-image">
-      <p class="hero-text">
-        A full service means your dog receives my full attention from start to finish. <br>
-        No overlap, no waiting, no distractions.
-      </p>
-      <h2 class="section-title">
-        Unhurried, Gentle Pace.
-      </h2>
-      <p class="hero-text">
-        I take my time. There's no rush during bathing, drying, or grooming.<br>
-        We bond throughout the whole process.
-      </p>
-    </section>
 
     <!-- Shelter Section -->
     <section class="content-section shelter-content" id="appointments">
+    <br>
+    <br>
       <h2 class="section-title">Support for Shelter Dogs</h2>
       <p class="section-text">
-       With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
-       is free with extra time, gentle care and a calm start.
+      5% of your appointment directly funds the journey of a shelter dog. I hold a special place for those who have been rescued; 
+      if you've adopted, your dog's inaugural visit is our gift to you. I provide a free, extended session designed to 
+      introduce them to the world of grooming with the softness and safety they deserve. <i>Limited availability.</i>
       </p>
-      <button class="cta-button-large">Book your appointment</button>
+      <br>
+      <br>
     </section>
 
     <!-- Full Screen Image 2 -->
     <section class="fullscreen-image">
-      <img src="/2.webp" alt="Dog grooming" />
+      <img src="/8.webp" alt="Dog grooming" />
     </section>
 
     <!-- Services Section -->
@@ -106,12 +87,11 @@ export function Home() {
       </p>
     <p class="section-text">Königspudel +30 minutes</p>
      
-      <button class="cta-button-large">See how it works</button>
     </section>
 
     <!-- Puppy Love Section -->
      <section class="content-section">
-      <h2 class="section-title">Puppy Love</h2>
+      <h2 class="section-title">Puppy's</h2>
       <p class="section-text">
         A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
         Designed to create positive associations and build confidence.
@@ -130,7 +110,7 @@ export function Home() {
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
-      <img src="/3.webp" alt="Dog grooming" />
+      <img src="/5.webp" alt="Dog grooming" />
     </section>
 
   <!-- Features Grid -->
@@ -153,10 +133,7 @@ export function Home() {
     
   
 
-  <!-- Full Screen Image 4 -->
-    <section class="fullscreen-image">
-      <img src="/4.webp" alt="Dog grooming" />
-    </section>
+
 
   <!-- FAQ Section -->
   <section class="faq-section" id="faq">

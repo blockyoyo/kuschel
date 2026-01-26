@@ -112,26 +112,7 @@ export function initAnimations() {
     });
   });
 
-  // Header animation (Osmo-style)
-  const headerItems = document.querySelectorAll(".header-animate-item");
-  if (headerItems.length > 0) {
-    // Set initial state - header items start below (hidden) and make visible
-    gsap.set(headerItems, { 
-      yPercent: 100,
-      visibility: "visible",
-    });
-
-    // Animate header items immediately (header is always in view)
-    gsap.to(headerItems, {
-      yPercent: 0,
-      duration: 1.25,
-      ease: "expo.out",
-      stagger: 0.05,
-      delay: 0.2, // Small delay after preloader
-    });
-  }
-
-  // Header logo animation (popup-style with rotation and jump)
+  // Header logo animation (rotation and jump)
   const headerLogo = document.querySelector(".header-logo-animate");
   if (headerLogo) {
     const tl = gsap.timeline({ 
@@ -167,51 +148,43 @@ export function initAnimations() {
     );
   }
 
+  // Logo text animation (fly in from right)
+  const logoText = document.querySelector(".logo-text-animate");
+  if (logoText) {
+    gsap.fromTo(
+      logoText,
+      { 
+        x: 1000, 
+        opacity: 0 
+      },
+      { 
+        x: 0, 
+        opacity: 1, 
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.3
+      }
+    );
+  }
 
-  // Word slide from right animation (Osmo-style)
-  const wordsSlideFromRightElements = document.querySelectorAll(
-    ".words-slide-from-right",
-  );
-  wordsSlideFromRightElements.forEach((element) => {
-    const words = element.querySelectorAll(".word");
-
-    if (words.length === 0) return;
-
-    // Set initial state - words start below (hidden) and make visible
-    gsap.set(words, { 
-      yPercent: 100,
-      visibility: "visible",
-    });
-
-    // Create and play animation immediately if in view
-    const rect = element.getBoundingClientRect();
-    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-    if (isInView) {
-      // Element is in view, animate immediately
-      gsap.to(words, {
-        yPercent: 0,
-        duration: 1.25,
-        ease: "expo.out",
-        stagger: 0.025,
-      });
-    } else {
-      // Element is out of view, use ScrollTrigger
-      ScrollTrigger.create({
-        trigger: element,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.to(words, {
-            yPercent: 0,
-            duration: 1.25,
-            ease: "expo.out",
-            stagger: 0.025,
-          });
-        },
-        once: true,
-      });
-    }
-  });
+  // Header navigation fade-in (after other animations finish)
+  const headerNav = document.querySelector(".header-nav-animate");
+  if (headerNav) {
+    gsap.fromTo(
+      headerNav,
+      { 
+        opacity: 0,
+        y: -10
+      },
+      { 
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 1.4 // After logo and text animations complete
+      }
+    );
+  }
 
   ScrollTrigger.sort();
 }

@@ -1,15 +1,19 @@
 export function Header() {
   return `
     <header class="header">
-      <div class="header-animate-item">
+      <div class="">
         <a href="/" class="logo-link" data-nav>
-          <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="logo" />
+          <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="logo header-logo-animate" />
         </a>
       </div>
+      
       <div class="header-right">
-        <button class="cta-button header-animate-item">BOOK SESSION</button>
-        <button class="info-button header-animate-item">QUICK INFO</button>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#appointments" class="nav-link">Appointments</a>
+        <a href="#faq" class="nav-link">FAQ</a>
       </div>
+      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
+
     </header>
   `;
 }

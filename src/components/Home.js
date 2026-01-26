@@ -11,7 +11,7 @@ export function Home() {
       <br>
       <br>
 
-      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text header-animate-item" /> 
+      
 
       <p class="hero-text">
         Making a difference.
@@ -32,114 +32,101 @@ export function Home() {
       <img src="/1.webp" alt="Dog grooming" />
     </section>
 
-    <!-- Horizontal Scroll Container -->
-    <div class="horizontal-container">
-      <div class="horizontal-sections">
-        <!-- Content After Image -->
-        <section class="hero-content hero-content-after panel" id="content-after-image">
-          <p class="hero-text">
-            A full service means your dog receives my full attention from start to finish. <br>
-            No overlap, no waiting, no distractions.
-          </p>
-          <h2 class="section-title">
-            Unhurried, Gentle Pace.
-          </h2>
-          <p class="hero-text">
-            I take my time. There's no rush during bathing, drying, or grooming.<br>
-            We bond throughout the whole process.
-          </p>
-        </section>
+    <!-- Content After Image -->
+    <section class="hero-content hero-content-after" id="content-after-image">
+      <p class="hero-text">
+        A full service means your dog receives my full attention from start to finish. <br>
+        No overlap, no waiting, no distractions.
+      </p>
+      <h2 class="section-title">
+        Unhurried, Gentle Pace.
+      </h2>
+      <p class="hero-text">
+        I take my time. There's no rush during bathing, drying, or grooming.<br>
+        We bond throughout the whole process.
+      </p>
+    </section>
 
-        <!-- Shelter Section -->
-        <section class="content-section shelter-content panel" id="shelter-initial-content">
-          <h2 class="section-title">Support for Shelter Dogs</h2>
-          <p class="section-text">
-           With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
-           is free with extra time, gentle care and a calm start.
-          </p>
-          <button class="cta-button-large">Book your appointment</button>
-        </section>
-      </div>
-    </div>
+    <!-- Shelter Section -->
+    <section class="content-section shelter-content" id="appointments">
+      <h2 class="section-title">Support for Shelter Dogs</h2>
+      <p class="section-text">
+       With every appointment, you help a shelter dog: 5% of each service is donated to help shelters/rescues. And if you've adopted from a shelter, your dog's first grooming 
+       is free with extra time, gentle care and a calm start.
+      </p>
+      <button class="cta-button-large">Book your appointment</button>
+    </section>
 
     <!-- Full Screen Image 2 -->
     <section class="fullscreen-image">
       <img src="/2.webp" alt="Dog grooming" />
     </section>
 
-  <!-- Horizontal Scroll Container 2 (Services) -->
-  <div class="horizontal-container-2">
-    <div class="horizontal-sections-2">
-      <!-- Section 2 -->
-      <section class="content-section panel-2" >
-        <h2 class="section-title">Services</h2>
-         <h2 class="hero-text">
-          Full Grooming
-        </h2>
-        <p class="section-text">
-          Complete care including washing, drying, grooming, and ear cleaning. <br> 
-          Nail trimming is offered only if the dog is comfortable — never forced.
-        </p>
-        <h2 class="hero-text">
-        Duration: 3 hours (+30 minutes for Königspudel)
-        </h2>
-        <p class="section-text">
-          <b>Small dogs — 120 €</b> <br> Yorkshire Terrier, Long-haired Dachshund, Pomeranian, Toy Poodle
-        </p>
-        <p class="section-text">
-          <b>Medium dogs — 150 €</b> <br> Havanese, Maltese, West Highland White Terrier, Jack Russell Terrier, Border Terrier
-        </p>
-        <p class="section-text">
-          <b>Large dogs — 180 €</b> <br> Goldendoodle, Lagotto Romagnolo, similar curly or long-coat types <br> Königspudel: <b>+20 €</b>
-        </p>
-       
-      </section>
+    <!-- Services Section -->
+    <section class="content-section" id="services">
+      <h2 class="section-title">Services</h2>
+       <h2 class="hero-text">
+        Full Grooming
+      </h2>
+      <p class="section-text">
+        Complete care including washing, drying, grooming, and ear cleaning. <br> 
+        Nail trimming is offered only if the dog is comfortable — never forced.
+      </p>
+      <h2 class="hero-text">
+      Duration: 3 hours (+30 minutes for Königspudel)
+      </h2>
+      <p class="section-text">
+        <b>Small dogs — 120 €</b> <br> Yorkshire Terrier, Long-haired Dachshund, Pomeranian, Toy Poodle
+      </p>
+      <p class="section-text">
+        <b>Medium dogs — 150 €</b> <br> Havanese, Maltese, West Highland White Terrier, Jack Russell Terrier, Border Terrier
+      </p>
+      <p class="section-text">
+        <b>Large dogs — 180 €</b> <br> Goldendoodle, Lagotto Romagnolo, similar curly or long-coat types <br> Königspudel: <b>+20 €</b>
+      </p>
+    </section>
 
-      <!-- Section 4 -->
-      <section class="content-section panel-2" >
-        <h2 class="section-title">Maintenance</h2>
-        <p class="section-text">
-          A service between full grooming sessions.Includes washing, drying, <br> 
-          and clean-ups around the eyes, under the paws, and the genital area.<br>
-          <br>
-          <b>Duration: 1.5 hours </b>  
-          <br>
-          <b>Prices:</b>
-          <br>
-          Small dogs — 40 € 
-          <br>
-          Medium dogs — 60 €
-          <br>
-          Large dogs — 80 €
-          <br>
-        </p>
-      <p class="section-text">Königspudel +30 minutes</p>
-       
-        <button class="cta-button-large">See how it works</button>
-      </section>
+    <!-- Maintenance Section -->
+    <section class="content-section">
+      <h2 class="section-title">Maintenance</h2>
+      <p class="section-text">
+        A service between full grooming sessions.Includes washing, drying, <br> 
+        and clean-ups around the eyes, under the paws, and the genital area.<br>
+        <br>
+        <b>Duration: 1.5 hours </b>  
+        <br>
+        <b>Prices:</b>
+        <br>
+        Small dogs — 40 € 
+        <br>
+        Medium dogs — 60 €
+        <br>
+        Large dogs — 80 €
+        <br>
+      </p>
+    <p class="section-text">Königspudel +30 minutes</p>
+     
+      <button class="cta-button-large">See how it works</button>
+    </section>
 
-      <!-- Section 5 -->
-       <section class="content-section panel-2" >
-        <h2 class="section-title">Puppy Love</h2>
-        <p class="section-text">
-          A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
-          Designed to create positive associations and build confidence.
-          <br>
-          <br>
-          <b>Duration: 1 hour</b>  
-          <br>
-          Price: 60 €
-        
-          <br>
-          <br>
-          Best timing: come in right after the last vaccinations. The earlier we start, <br>
-          the easier it is to avoid matting and build a relaxed routine.
-        </p>
+    <!-- Puppy Love Section -->
+     <section class="content-section">
+      <h2 class="section-title">Puppy Love</h2>
+      <p class="section-text">
+        A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
+        Designed to create positive associations and build confidence.
+        <br>
+        <br>
+        <b>Duration: 1 hour</b>  
+        <br>
+        Price: 60 €
       
-        
-      </section>
-    </div>
-  </div>
+        <br>
+        <br>
+        Best timing: come in right after the last vaccinations. The earlier we start, <br>
+        the easier it is to avoid matting and build a relaxed routine.
+      </p>
+    </section>
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
@@ -164,91 +151,7 @@ export function Home() {
       </div>
     </div>
     
-    <!-- Customer Reviews -->
-    <div class="email-screenshots">
-      
-      <div class="screenshot-grid">
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>Sarah M.</strong>
-              <p>First time visit with Max...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>Max was so anxious about grooming, but the calm atmosphere and one-on-one attention made all the difference. He came home relaxed and beautiful. Thank you!</p>
-          </div>
-          
-        </div>
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>Thomas K.</strong>
-              <p>Our rescue dog's first grooming...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>Luna came from a shelter and was terrified. The extra time and gentle approach helped her trust the process. The free first grooming was such a kind gesture!</p>
-          </div>
-          
-        </div>
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>Maria L.</strong>
-              <p>Best grooming experience ever...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>No rushing, no stress. My Golden Retriever actually enjoys coming here now. The unhurried pace and full attention make such a difference. Highly recommend!</p>
-          </div>
-          
-        </div>
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>David R.</strong>
-              <p>Puppy adaptation session...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>Brought our 4-month-old puppy for the adaptation session. Perfect timing after vaccinations! She's now completely comfortable with grooming. Worth every euro.</p>
-          </div>
-          
-        </div>
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>Anna B.</strong>
-              <p>Regular maintenance visits...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>The maintenance service keeps my Havanese looking perfect between full grooms. Quick, gentle, and always professional. My dog loves the calm environment.</p>
-          </div>
-          
-        </div>
-        <div class="email-card">
-          <div class="email-header">
-            <div class="avatar"></div>
-            <div class="email-meta">
-              <strong>Michael H.</strong>
-              <p>Königspudel grooming...</p>
-            </div>
-          </div>
-          <div class="email-content">
-            <p>Finally found someone who understands the needs of my Königspudel. The extra time and expertise show. My dog looks amazing and is so much happier!</p>
-          </div>
-         
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Full Screen Image 4 -->
     <section class="fullscreen-image">
@@ -256,7 +159,7 @@ export function Home() {
     </section>
 
   <!-- FAQ Section -->
-  <section class="faq-section" >
+  <section class="faq-section" id="faq">
     <h2 class="section-title">FAQ</h2>
     <div class="faq-container">
       <div class="faq-item">

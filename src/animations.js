@@ -131,35 +131,42 @@ export function initAnimations() {
     });
   }
 
-  // Hero text zoom-in animation
-  const heroTexts = document.querySelectorAll("#hero-initial-content .hero-text");
-  if (heroTexts.length > 0) {
-    // Animate hero text zoom in slowly
-    gsap.to(heroTexts, {
-      opacity: 1,
-      scale: 1,
-      duration: 2,
-      ease: "power2.out",
-      stagger: 0.3,
-      delay: 0.5, // Delay after header animation
+  // Header logo animation (popup-style with rotation and jump)
+  const headerLogo = document.querySelector(".header-logo-animate");
+  if (headerLogo) {
+    const tl = gsap.timeline({ 
+      delay: 0,
+      defaults: { duration: 0.1 }
     });
+
+    // 1. Rotate and slide in logo from left
+    tl.fromTo(
+      headerLogo,
+      { 
+        rotation: 180, 
+        x: -1000, 
+        opacity: 0,
+        transformOrigin: "center center"
+      },
+      { 
+        rotation: 720, 
+        x: 0, 
+        opacity: 1, 
+        duration: 0.75,
+        transformOrigin: "center center"
+      },
+      0
+    );
+
+    // 2. Logo jump 
+    tl.fromTo(
+      headerLogo,
+      { y: 0 },
+      { y: -15, duration: 0.5, ease: "elastic.out(1, 0.3)" },
+      0.5
+    );
   }
 
-  // Location text fade-in animation (last to appear)
-  const locationText = document.querySelector("#hero-initial-content .hero-text-location");
-  if (locationText) {
-    // Calculate delay to ensure it fades in after all other hero animations
-    // Header: 0.2s delay + 1.25s duration = ~1.45s
-    // Hero text: 0.5s delay + 2s duration = ~2.5s
-    // Words: ~1.5-2s after start
-    // So location should start around 2.5-3s
-    gsap.to(locationText, {
-      opacity: 1,
-      duration: 1.5,
-      ease: "power2.out",
-      delay: 2.8, // Fade in after other hero elements
-    });
-  }
 
   // Word slide from right animation (Osmo-style)
   const wordsSlideFromRightElements = document.querySelectorAll(
@@ -231,41 +238,6 @@ export function initFullscreenImageAnimations() {
   });
 }
 
-export function initHorizontalScroll() {
-  const sections = gsap.utils.toArray(".horizontal-sections .panel");
-
-  if (sections.length === 0) return;
-
-  return gsap.to(sections, {
-    xPercent: -150 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal-container",
-      pin: true,
-      scrub: 0.1,
-      end: "+=3000",
-      scroller: document.body,
-    },
-  });
-}
-
-export function initHorizontalScroll2() {
-  const sections = gsap.utils.toArray(".horizontal-sections-2 .panel-2");
-
-  if (sections.length === 0) return;
-
-  return gsap.to(sections, {
-    xPercent: -145 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontal-container-2",
-      pin: true,
-      scrub: 0.1,
-      end: "+=3000",
-      scroller: document.body,
-    },
-  });
-}
 
 export function initPreloader() {
   const preloader = document.querySelector(".preloader");
@@ -285,8 +257,6 @@ export function initPreloader() {
         setTimeout(() => {
           initAnimations();
           initFullscreenImageAnimations();
-          initHorizontalScroll();
-          initHorizontalScroll2();
         }, 0);
       },
     });
@@ -329,8 +299,6 @@ export function initScrollAnimations(skipPreloader = false) {
   if (isInitialized) {
     initAnimations();
     initFullscreenImageAnimations();
-    initHorizontalScroll();
-    initHorizontalScroll2();
     return;
   }
 
@@ -342,8 +310,6 @@ export function initScrollAnimations(skipPreloader = false) {
     setTimeout(() => {
       initAnimations();
       initFullscreenImageAnimations();
-      initHorizontalScroll();
-      initHorizontalScroll2();
     }, 0);
   }
   

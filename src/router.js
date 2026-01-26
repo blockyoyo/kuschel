@@ -27,6 +27,11 @@ export function router() {
   let isHomePage = false;
   let isInitialLoad = true;
 
+  // Disable automatic scroll restoration
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   function render(path) {
     // Clean up animations if leaving home page
     if (isHomePage && path !== "/") {
@@ -36,6 +41,9 @@ export function router() {
 
     const component = routes[path] || routes["/"];
     app.innerHTML = component();
+    
+    // Always scroll to top when rendering a new page
+    window.scrollTo(0, 0);
     
     // Inject Info popup after component render (ensure it's always present)
     const existingInfoPopup = document.querySelector('.info-popup-overlay');
@@ -119,6 +127,23 @@ export function router() {
       if (!isActive) {
         faqItem.classList.add("active");
       }
+    }
+
+    // Handle anchor/hash links (smooth scroll to sections)
+    if (e.target.closest("a[href^='#']")) {
+      const link = e.target.closest("a[href^='#']");
+      const href = link.getAttribute("href");
+      const targetId = href.substring(1); // Remove the #
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ 
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+      return;
     }
 
     // Handle navigation links (only those with data-nav attribute)

@@ -61,10 +61,11 @@ body {
 
 /* Header */
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 3rem;
+  padding: 2rem 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -91,18 +92,29 @@ body {
 
 .header-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex;
-  gap: 0.5rem;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 8rem;
+  gap: 3.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #666;
 }
 
 .logo_text {
-  position: relative;
-  margin: 0 auto;
-  margin-top: -4rem;
-  text-align: center;
+  
   padding-bottom: 1rem;
-  width: 220px;
+  width: 300px;
   height: auto;
   z-index: 10;
 }
@@ -242,16 +254,6 @@ body {
   color: var(--text-dark);
 }
 
-/* Initial state for location text fade-in */
-#hero-initial-content .hero-text-location {
-  opacity: 0;
-}
-
-/* Zoom-in animation only for initial hero content */
-#hero-initial-content .hero-text {
-  opacity: 0;
-  transform: scale(0.8);
-}
 
 /* Shelter Section */
 #shelter-initial-content {
@@ -575,6 +577,14 @@ body {
 .logo-link {
   text-decoration: none;
   display: inline-block;
+  position: relative;
+}
+
+.header-logo-animate {
+  display: block;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateX(-1000px) rotate(180deg);
 }
 
 /* Contact Page Styles */

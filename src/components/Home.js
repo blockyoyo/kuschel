@@ -19,8 +19,11 @@ export function Home() {
     </section>
 
     <!-- Full Screen Image 1 -->
-    <section class="fullscreen-image">
+    <section class="fullscreen-image" data-image-overlay>
       <img src="/4.webp" alt="Dog grooming" />
+      <div class="image-overlay-text">
+        <h3 class="section-title">Unhurried Gentle Grooming</h3>
+      </div>
     </section>
 
 
@@ -39,8 +42,11 @@ export function Home() {
     </section>
 
     <!-- Full Screen Image 2 -->
-    <section class="fullscreen-image">
+    <section class="fullscreen-image" data-image-overlay>
       <img src="/8.webp" alt="Dog grooming" />
+      <div class="image-overlay-text">
+        <h3 class="section-title">make a difference</h3>
+      </div>
     </section>
 
     <!-- Services Section -->

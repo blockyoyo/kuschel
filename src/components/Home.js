@@ -43,7 +43,7 @@ export function Home() {
 
     <!-- Full Screen Image 2 -->
     <section class="fullscreen-image" data-image-overlay>
-      <img src="/8.webp" alt="Dog grooming" />
+      <img src="/8.webp" alt="Dog grooming" class="image-offset-right" />
       <div class="image-overlay-text">
         <h3 class="section-title">make a difference</h3>
       </div>

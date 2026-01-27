@@ -1138,6 +1138,10 @@ body {
     font-size: 4rem;
   }
 
+  .image-offset-right {
+    object-position: 20% center;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

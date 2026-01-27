@@ -13,7 +13,7 @@ export function Footer() {
       </div>
       
       <div class="footer-column footer-column-links">
-        <a href="/contact" class="footer-link" data-nav>Contact</a>
+        <a href="/contact" class="footer-link" data-nav>Book an Appointment</a>
         <a href="/legal" class="footer-link" data-nav>Legal</a>
         <a href="/privacy" class="footer-link" data-nav>Privacy Policy</a>
       </div>

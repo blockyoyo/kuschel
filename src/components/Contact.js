@@ -13,12 +13,10 @@ export function Contact() {
       <div class="contact-section">
       
         <p class="section-text">
-          Your grooming visit can be booked online through the booking system.
+          Kuscheltier Studio is open by appointment only, Monday to Saturday, with bookings available throughout the day and in the evenings.
+          To book a visit, reach out on WhatsApp, send a text message, or email me. I'll get back to you as soon as possible.
         </p>
         
-        <p class="section-text">
-          If none of the available time slots suit you, feel free to contact me directly — I'll do my best to find an alternative.
-        </p>
       </div>
       
       <!-- Contact Details Section -->
@@ -32,16 +30,17 @@ export function Contact() {
               
             </p>
           </div>
+              <div class="contact-item">
+            <p class="section-text">
+              <strong>Email:</strong> <a href="mailto:book@kuscheltier.studio" class="contact-link">book@kuscheltier.studio</a>
+            </p>
+          </div>
           <div class="contact-item">
             <p class="section-text">
               <strong>Instagram:</strong> <a href="https://www.instagram.com/kuscheltier.studio" class="contact-link" target="_blank" rel="noopener noreferrer">@kuscheltier.studio</a>
             </p>
           </div>
-          <div class="contact-item">
-            <p class="section-text">
-              <strong>Email:</strong> <a href="mailto:book@kuscheltier.studio" class="contact-link">book@kuscheltier.studio</a>
-            </p>
-          </div>
+      
         </div>
       </div>
       
@@ -49,11 +48,9 @@ export function Contact() {
       <div class="contact-section">
         <h2 class="section-title">About Me</h2>
         <p class="section-text">
-          I'm Małgorzata Leszkiewicz (Gosia), founder of Kuscheltier Studio. Born in Warsaw, I came to grooming after years in advertising and project management. I'm also Franka's human – you may meet her at the studio from time to time.
+          I'm Gosia, founder of Kuscheltier Studio. I'm also Franka's human. My goal is simple: create happy and healthy dogs that look and feel great. 
         </p>
-        <p class="section-text">
-          My goal is simple: to support happy, healthy dogs—with calm, gentle grooming and by encouraging adoption. That's why 5% of every service is donated to dog shelters, and the first grooming visit is free for dogs adopted from shelters.
-        </p>
+      
         <div class="about-photos">
           <div class="photo-container">
             <img src="/Gosia.webp" alt="Małgorzata Leszkiewicz" class="about-photo" />

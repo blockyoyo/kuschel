@@ -214,29 +214,6 @@ export function initFullscreenImageAnimations() {
       },
     });
   });
-
-  // Animate overlay text on images
-  const overlayTexts = document.querySelectorAll(".image-overlay-text");
-  
-  overlayTexts.forEach((text) => {
-    // Set initial state: off screen to the right
-    gsap.set(text, { x: 200, opacity: 0 });
-    
-    // Animate in from right when scrolled into view
-    gsap.to(text, {
-      x: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: text.parentElement,
-        start: "top 70%",
-        end: "top 30%",
-        toggleActions: "play none none reverse",
-        scroller: document.body,
-      },
-    });
-  });
 }
 
 

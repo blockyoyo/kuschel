@@ -19,11 +19,8 @@ export function Home() {
     </section>
 
     <!-- Full Screen Image 1 -->
-    <section class="fullscreen-image" data-image-overlay>
+    <section class="fullscreen-image">
       <img src="/4.webp" alt="Dog grooming" />
-      <div class="image-overlay-text">
-        <h3 class="section-title">Make a difference</h3>
-      </div>
     </section>
 
 
@@ -39,19 +36,17 @@ export function Home() {
       </p>
       <br>
       <br>
+      <a href="/contact" class="cta-button" data-nav>BOOK NOW</a>
     </section>
 
     <!-- Full Screen Image 2 -->
-    <section class="fullscreen-image" data-image-overlay>
+    <section class="fullscreen-image">
       <img src="/8.webp" alt="Dog grooming" class="image-offset-right" />
-      <div class="image-overlay-text">
-        <h3 class="section-title">Services</h3>
-      </div>
     </section>
 
     <!-- Services Section -->
     <section class="content-section" id="services">
-      <h2 class="section-title">Full Grooming</h2>
+      <h2 class="section-title">Dog Grooming</h2>
       
       <p class="section-text">
         Complete care including washing, drying, grooming, and ear cleaning. <br> 
@@ -110,6 +105,7 @@ export function Home() {
         Best timing: come in right after the last vaccinations. The earlier we start, <br>
         the easier it is to avoid matting and build a relaxed routine.
       </p>
+      <a href="/contact" class="cta-button" data-nav>BOOK NOW</a>
     </section>
 
   <!-- Full Screen Image 3 -->

@@ -26,8 +26,7 @@ export function Home() {
 
     <!-- Shelter Section -->
     <section class="content-section shelter-content" id="appointments">
-    <br>
-    <br>
+  
       <h2 class="section-title">Support for Shelter Dogs</h2>
       <p class="hero-text">
       5% of your appointment directly funds the journey of a shelter dog. I hold a special place for those who have been rescued; 
@@ -35,8 +34,9 @@ export function Home() {
       introduce them to the world of grooming with the softness and safety they deserve. <i>Limited availability.</i>
       </p>
       <br>
-      <br>
+    
       <a href="/contact" class="cta-button" data-nav>BOOK NOW</a>
+      <br>
     </section>
 
     <!-- Full Screen Image 2 -->

@@ -4,7 +4,7 @@ export function Info() {
       <div class="info-popup-container">
         <button class="info-popup-close" aria-label="Close popup">&times;</button>
         <div class="info-logo">
-          <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" />
+          <img src="/KuschelTier_logo.svg" alt="KuschelTier Logo" />
         </div>
         <div class="info-content">
           <h2 class="section-title">Quick Info</h2>

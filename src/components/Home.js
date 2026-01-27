@@ -29,7 +29,7 @@ export function Home() {
     <br>
     <br>
       <h2 class="section-title">Support for Shelter Dogs</h2>
-      <p class="section-text">
+      <p class="hero-text">
       5% of your appointment directly funds the journey of a shelter dog. I hold a special place for those who have been rescued; 
       if you've adopted, your dog's inaugural visit is our gift to you. I provide a free, extended session designed to 
       introduce them to the world of grooming with the softness and safety they deserve. <i>Limited availability.</i>
@@ -49,7 +49,7 @@ export function Home() {
       <h2 class="section-title">Dog Grooming</h2>
       
       <p class="section-text">
-        Complete care including washing, drying, grooming, and ear cleaning. <br> 
+        Complete care including washing, drying, grooming, and ear cleaning. 
         Nail trimming is offered only if the dog is comfortable — never forced.
       </p>
       <h2 class="hero-text">
@@ -62,7 +62,7 @@ export function Home() {
         <b>Medium dogs — 150 €</b> <br> Havanese, Maltese, West Highland White Terrier, Jack Russell Terrier, Border Terrier
       </p>
       <p class="section-text">
-        <b>Large dogs — 180 €</b> <br> Goldendoodle, Lagotto Romagnolo, similar curly or long-coat types <br> Königspudel: <b>+20 €</b>
+        <b>Large dogs — 180 €</b> <br> Goldendoodle, Lagotto Romagnolo, similar curly or long-coat types, Königspudel:+20 €</b>
       </p>
     </section>
 
@@ -70,7 +70,7 @@ export function Home() {
     <section class="content-section">
       <h2 class="section-title">Maintenance</h2>
       <p class="section-text">
-        A service between full grooming sessions.Includes washing, drying, <br> 
+        A service between full grooming sessions.Includes washing, drying,  
         and clean-ups around the eyes, under the paws, and the genital area.<br>
         <br>
         <b>Duration: 1.5 hours </b>  
@@ -92,7 +92,7 @@ export function Home() {
      <section class="content-section">
       <h2 class="section-title">Puppy's</h2>
       <p class="section-text">
-        A calm introduction to grooming: new sounds, tools, short handling exercises. <br> 
+        A calm introduction to grooming: new sounds, tools, short handling exercises.
         Designed to create positive associations and build confidence.
         <br>
         <br>
@@ -102,7 +102,7 @@ export function Home() {
       
         <br>
         <br>
-        Best timing: come in right after the last vaccinations. The earlier we start, <br>
+        Best timing: come in right after the last vaccinations. The earlier we start, 
         the easier it is to avoid matting and build a relaxed routine.
       </p>
       <a href="/contact" class="cta-button" data-nav>BOOK NOW</a>
@@ -110,7 +110,7 @@ export function Home() {
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
-      <img src="/9.webp" alt="Dog grooming" />
+      <img src="/9.webp" alt="Dog grooming" class="image-offset-left" />
     </section>
 
   <!-- Features Grid -->

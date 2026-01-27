@@ -8,6 +8,11 @@ let lenis;
 let scrollTriggerRefresh;
 let isInitialized = false;
 
+// Export function to get lenis instance
+export function getLenis() {
+  return lenis;
+}
+
 export function initLenis() {
   if (lenis) {
     return lenis;
@@ -144,7 +149,7 @@ export function initAnimations() {
       headerLogo,
       { y: 0 },
       { y: -15, duration: 0.5, ease: "elastic.out(1, 0.3)" },
-      0.5
+      ">"
     );
   }
 

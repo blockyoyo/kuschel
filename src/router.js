@@ -13,6 +13,7 @@ import {
   hideInfoPopup,
   showLocationPopup,
   hideLocationPopup,
+  getLenis,
 } from "./animations.js";
 
 const routes = {
@@ -141,10 +142,19 @@ export function router() {
 
       if (targetElement) {
         e.preventDefault();
-        targetElement.scrollIntoView({ 
-          behavior: "smooth",
-          block: "start"
-        });
+        const lenis = getLenis();
+        if (lenis) {
+          lenis.scrollTo(targetElement, {
+            offset: -100, // Adjust for header height
+            duration: 1.5,
+          });
+        } else {
+          // Fallback to native smooth scroll
+          targetElement.scrollIntoView({ 
+            behavior: "smooth",
+            block: "start"
+          });
+        }
       }
       return;
     }
@@ -168,10 +178,19 @@ export function router() {
           setTimeout(() => {
             const targetElement = document.getElementById(hash);
             if (targetElement) {
-              targetElement.scrollIntoView({ 
-                behavior: "smooth",
-                block: "start"
-              });
+              const lenis = getLenis();
+              if (lenis) {
+                lenis.scrollTo(targetElement, {
+                  offset: -100, // Adjust for header height
+                  duration: 1.5,
+                });
+              } else {
+                // Fallback to native smooth scroll
+                targetElement.scrollIntoView({ 
+                  behavior: "smooth",
+                  block: "start"
+                });
+              }
             }
           }, 300);
         } else {
@@ -228,7 +247,15 @@ export function router() {
             setTimeout(() => {
               const servicesSection = document.querySelector(".horizontal-container-2");
               if (servicesSection) {
-                servicesSection.scrollIntoView({ behavior: "smooth" });
+                const lenis = getLenis();
+                if (lenis) {
+                  lenis.scrollTo(servicesSection, {
+                    offset: -100,
+                    duration: 1.5,
+                  });
+                } else {
+                  servicesSection.scrollIntoView({ behavior: "smooth" });
+                }
               }
             }, 300);
           } else {
@@ -237,7 +264,15 @@ export function router() {
             setTimeout(() => {
               const servicesSection = document.querySelector(".horizontal-container-2");
               if (servicesSection) {
-                servicesSection.scrollIntoView({ behavior: "smooth" });
+                const lenis = getLenis();
+                if (lenis) {
+                  lenis.scrollTo(servicesSection, {
+                    offset: -100,
+                    duration: 1.5,
+                  });
+                } else {
+                  servicesSection.scrollIntoView({ behavior: "smooth" });
+                }
               }
             }, 500);
           }

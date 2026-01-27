@@ -56,18 +56,16 @@ export function Contact() {
         </p>
         <div class="about-photos">
           <div class="photo-container">
-            <img src="/about-gosia.jpg" alt="Małgorzata Leszkiewicz" class="about-photo" />
-          </div>
-          <div class="photo-container">
-            <img src="/about-gosia-franka.jpg" alt="Gosia with Franka" class="about-photo" />
+            <img src="/Gosia.webp" alt="Małgorzata Leszkiewicz" class="about-photo" />
           </div>
         </div>
       </div>
       
       <!-- Location Section -->
       <div class="contact-section">
+      <img src="/KuschelTier.svg" alt="KuschelTier" class="logo_text" /> 
          <h2 class="section-title">Location</h2>
-          <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text" /> 
+          
        
         <div class="map-container">
           <!-- Map  -->

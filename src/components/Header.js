@@ -12,7 +12,7 @@ export function Header() {
         <a href="/contact" class="nav-link" data-nav>Appointments</a>
         <a href="/#faq" class="nav-link" data-nav>FAQ</a>
       </div>
-      <img src="/KuschelTier.png" alt="KuschelTier" class="logo_text logo-text-animate" /> 
+      <img src="/KuschelTier.svg" alt="KuschelTier" class="logo_text logo-text-animate" /> 
 
     </header>
   `;

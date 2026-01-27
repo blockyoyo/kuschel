@@ -9,7 +9,7 @@ export function Home() {
     <!-- Hero Section -->
     <section class="hero-content" >
       <h3 class="section-title">
-        One Dog at a Time.
+        One Dog at a Time
       </h3>
       <p class="hero-text"> Step out of the noise and into the calm. Kuscheltier is a boutique grooming 
       space where your dog is the sole focus. By removing the rush of the traditional salon, I create a safe, 
@@ -110,12 +110,12 @@ export function Home() {
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
-      <img src="/1.webp" alt="Dog grooming" />
+      <img src="/9.webp" alt="Dog grooming" />
     </section>
 
   <!-- Features Grid -->
   <section class="features-section" data-animate="staggerReveal">
-    <h2 class="section-title">What you get:</h2>
+    <h2 class="section-title">What you get</h2>
     <div class="features-grid">
       <div class="feature-card">
         <h3>Gentle, Patient Care</h3>

@@ -44,19 +44,6 @@ export function Contact() {
         </div>
       </div>
       
-      <!-- About Me Section -->
-      <div class="contact-section">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-text">
-          I'm Gosia, founder of Kuscheltier Studio. I'm also Franka's human. My goal is simple: create happy and healthy dogs that look and feel great. 
-        </p>
-      
-        <div class="about-photos">
-          <div class="photo-container">
-            <img src="/Gosia.webp" alt="Małgorzata Leszkiewicz" class="about-photo" />
-          </div>
-        </div>
-      </div>
       
       <!-- Location Section -->
       <div class="contact-section">

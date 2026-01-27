@@ -22,7 +22,7 @@ export function Home() {
     <section class="fullscreen-image" data-image-overlay>
       <img src="/4.webp" alt="Dog grooming" />
       <div class="image-overlay-text">
-        <h3 class="section-title">Unhurried Gentle Grooming</h3>
+        <h3 class="section-title">Make a difference</h3>
       </div>
     </section>
 
@@ -45,16 +45,14 @@ export function Home() {
     <section class="fullscreen-image" data-image-overlay>
       <img src="/8.webp" alt="Dog grooming" class="image-offset-right" />
       <div class="image-overlay-text">
-        <h3 class="section-title">make a difference</h3>
+        <h3 class="section-title">Services</h3>
       </div>
     </section>
 
     <!-- Services Section -->
     <section class="content-section" id="services">
-      <h2 class="section-title">Services</h2>
-       <h2 class="hero-text">
-        Full Grooming
-      </h2>
+      <h2 class="section-title">Full Grooming</h2>
+      
       <p class="section-text">
         Complete care including washing, drying, grooming, and ear cleaning. <br> 
         Nail trimming is offered only if the dog is comfortable — never forced.
@@ -116,7 +114,7 @@ export function Home() {
 
   <!-- Full Screen Image 3 -->
     <section class="fullscreen-image">
-      <img src="/5.webp" alt="Dog grooming" />
+      <img src="/1.webp" alt="Dog grooming" />
     </section>
 
   <!-- Features Grid -->

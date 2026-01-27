@@ -7,7 +7,7 @@ export function Footer() {
           80469 München
         </p>
         <p class="footer-text">
-          Tel: <a href="tel:+491627001514" class="footer-phone-link">+49 162 700 1514</a><br>
+          Tel: <a href="https://wa.me/491627001514" class="footer-phone-link" target="_blank" rel="noopener noreferrer">+49 162 700 1514</a><br>
           www.kuscheltier.studio
         </p>
       </div>
@@ -20,7 +20,7 @@ export function Footer() {
       
       <div class="footer-column footer-column-logo">
         
-          <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="footer-logo-img" />
+          <img src="/KuschelTier_logo.svg" alt="KuschelTier Logo" class="footer-logo-img" />
        
       </div>
     </footer>

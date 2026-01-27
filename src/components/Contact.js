@@ -28,8 +28,8 @@ export function Contact() {
         <div class="contact-info">
           <div class="contact-item">
             <p class="section-text">
-              <strong>Phone:</strong> <a href="tel:+491627001514" class="contact-link">0162 700 1514</a><br>
-              <span class="small-text">Available also on WhatsApp</span>
+              <strong>WhatsApp:</strong> <a href="https://wa.me/491627001514" class="contact-link" target="_blank" rel="noopener noreferrer">0162 700 1514</a><br>
+              
             </p>
           </div>
           <div class="contact-item">

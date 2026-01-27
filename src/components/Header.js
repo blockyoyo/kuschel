@@ -3,7 +3,7 @@ export function Header() {
     <header class="header">
       <div class="">
         <a href="/" class="logo-link" data-nav>
-          <img src="/KuschelTier_logo.png" alt="KuschelTier Logo" class="logo header-logo-animate" />
+          <img src="/KuschelTier_logo.svg" alt="KuschelTier Logo" class="logo header-logo-animate" />
         </a>
       </div>
       

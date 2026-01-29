@@ -362,6 +362,11 @@ body {
   min-width: 200px;
 }
 
+.contact-item .section-text strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .contact-link {
   color: var(--text-dark);
   text-decoration: none;

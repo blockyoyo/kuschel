@@ -24,15 +24,14 @@ export function Contact() {
        
       
         <div class="contact-info">
-          <div class="contact-item">
+         <div class="contact-item">
             <p class="section-text">
-              <strong>WhatsApp:</strong> <a href="https://wa.me/491627001514" class="contact-link" target="_blank" rel="noopener noreferrer">0162 700 1514</a><br>
-              
+              <strong>WhatsApp:    </strong> <a href="https://wa.me/491627001514" class="contact-link" target="_blank" rel="noopener noreferrer">0162 700 1514</a>
             </p>
-          </div>
+         </div>
               <div class="contact-item">
             <p class="section-text">
-              <strong>Email:</strong> <a href="mailto:book@kuscheltier.studio" class="contact-link">book@kuscheltier.studio</a>
+              <strong>Email:</strong> <a href="mailto:hello@kuscheltier.studio " class="contact-link">hello@kuscheltier.studio </a>
             </p>
           </div>
           <div class="contact-item">

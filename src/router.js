@@ -2,17 +2,11 @@ import { Home } from "./components/Home.js";
 import { Contact } from "./components/Contact.js";
 import { Privacy } from "./components/Privacy.js";
 import { Legal } from "./components/Legal.js";
-import { Info } from "./components/Info.js";
-import { LocationPopup } from "./components/LocationPopup.js";
 import {
   initScrollAnimations,
   destroyScrollAnimations,
   initAnimations,
   hidePreloader,
-  showInfoPopup,
-  hideInfoPopup,
-  showLocationPopup,
-  hideLocationPopup,
   getLenis,
 } from "./animations.js";
 
@@ -44,20 +38,6 @@ export function router() {
     app.innerHTML = component();
     
     window.scrollTo(0, 0);
-    
-    const existingInfoPopup = document.querySelector('.info-popup-overlay');
-    if (!existingInfoPopup) {
-      const infoPopupHTML = Info();
-      document.body.insertAdjacentHTML('beforeend', infoPopupHTML);
-      console.log('Info popup injected');
-    }
-    
-    const existingLocationPopup = document.querySelector('.location-popup-overlay');
-    if (!existingLocationPopup) {
-      const locationPopupHTML = LocationPopup();
-      document.body.insertAdjacentHTML('beforeend', locationPopupHTML);
-      console.log('Location popup injected');
-    }
 
     if (path === "/") {
       setTimeout(() => {
@@ -95,12 +75,6 @@ export function router() {
   }
 
   app.addEventListener("click", (e) => {
-    if (e.target.closest(".info-button")) {
-      e.preventDefault();
-      showInfoPopup();
-      return;
-    }
-
     if (e.target.closest(".faq-question")) {
       const question = e.target.closest(".faq-question");
       const faqItem = question.closest(".faq-item");
@@ -175,88 +149,6 @@ export function router() {
     }
   });
 
-  document.addEventListener("click", (e) => {
-    const infoCloseButton = e.target.closest(".info-popup-close");
-    if (infoCloseButton) {
-      console.log('Info close button clicked');
-      hideInfoPopup();
-      return;
-    }
-
-    const locationCloseButton = e.target.closest(".location-popup-close");
-    if (locationCloseButton) {
-      console.log('Location close button clicked');
-      hideLocationPopup();
-      return;
-    }
-
-    if (e.target.classList.contains("info-popup-overlay")) {
-      console.log('Info overlay clicked');
-      hideInfoPopup();
-      return;
-    }
-
-    if (e.target.classList.contains("location-popup-overlay")) {
-      console.log('Location overlay clicked');
-      hideLocationPopup();
-      return;
-    }
-
-    const actionButton = e.target.closest(".info-popup-button");
-    if (actionButton) {
-      const action = actionButton.getAttribute("data-action");
-
-      switch (action) {
-        case "price":
-          hideInfoPopup();
-          if (window.location.pathname === "/") {
-            setTimeout(() => {
-              const servicesSection = document.querySelector(".horizontal-container-2");
-              if (servicesSection) {
-                const lenis = getLenis();
-                if (lenis) {
-                  lenis.scrollTo(servicesSection, {
-                    offset: -100,
-                    duration: 1.5,
-                  });
-                } else {
-                  servicesSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }
-            }, 300);
-          } else {
-            navigate("/");
-            setTimeout(() => {
-              const servicesSection = document.querySelector(".horizontal-container-2");
-              if (servicesSection) {
-                const lenis = getLenis();
-                if (lenis) {
-                  lenis.scrollTo(servicesSection, {
-                    offset: -100,
-                    duration: 1.5,
-                  });
-                } else {
-                  servicesSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }
-            }, 500);
-          }
-          break;
-
-        case "call":
-          hideInfoPopup();
-          window.location.href = "tel:+491627001514";
-          break;
-
-        case "location":
-          hideInfoPopup();
-          setTimeout(() => {
-            showLocationPopup();
-          }, 300);
-          break;
-      }
-    }
-  });
 
   function navigate(path) {
     window.history.pushState({}, "", path);

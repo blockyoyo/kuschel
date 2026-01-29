@@ -1,5 +1,7 @@
 {
   "name": "kuschel",
+  "description": "KuschelTier - Grooming with love",
+  "author": "Codeboi",
   "private": true,
   "version": "0.0.0",
   "type": "module",

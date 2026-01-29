@@ -44,7 +44,6 @@ export function Contact() {
         </div>
       </div>
       
-      
       <!-- Location Section -->
       <div class="contact-section">
       <img src="/KuschelTier.svg" alt="KuschelTier" class="logo_text" /> 

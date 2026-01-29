@@ -28,16 +28,13 @@ export function router() {
   let isHomePage = false;
   let isInitialLoad = true;
 
-  // Immediately scroll to top on initial load
   window.scrollTo(0, 0);
 
-  // Disable automatic scroll restoration
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
   function render(path) {
-    // Clean up animations if leaving home page
     if (isHomePage && path !== "/") {
       destroyScrollAnimations();
       isHomePage = false;
@@ -46,10 +43,8 @@ export function router() {
     const component = routes[path] || routes["/"];
     app.innerHTML = component();
     
-    // Always scroll to top when rendering a new page
     window.scrollTo(0, 0);
     
-    // Inject Info popup after component render (ensure it's always present)
     const existingInfoPopup = document.querySelector('.info-popup-overlay');
     if (!existingInfoPopup) {
       const infoPopupHTML = Info();
@@ -57,7 +52,6 @@ export function router() {
       console.log('Info popup injected');
     }
     
-    // Inject Location popup after component render (ensure it's always present)
     const existingLocationPopup = document.querySelector('.location-popup-overlay');
     if (!existingLocationPopup) {
       const locationPopupHTML = LocationPopup();
@@ -65,30 +59,22 @@ export function router() {
       console.log('Location popup injected');
     }
 
-    // Initialize animations for home page
     if (path === "/") {
-      // Use setTimeout to ensure DOM is fully rendered
       setTimeout(() => {
         if (!isHomePage) {
-          // First time loading home page or returning from another page
           if (isInitialLoad) {
-            // Initial page load - use full preloader animation
             initScrollAnimations(false);
           } else {
-            // SPA navigation to home - skip preloader
             initScrollAnimations(true);
           }
           isHomePage = true;
         } else {
-          // If already initialized, just refresh animations for new elements
           initAnimations();
         }
       }, 0);
     } else {
-      // For other pages, hide preloader and initialize animations
       setTimeout(() => {
         if (isInitialLoad) {
-          // On initial load, wait for window load event
           if (document.readyState === "complete") {
             hidePreloader();
             initAnimations();
@@ -99,7 +85,6 @@ export function router() {
             }, { once: true });
           }
         } else {
-          // On SPA navigation, hide preloader immediately
           hidePreloader();
           initAnimations();
         }
@@ -109,16 +94,13 @@ export function router() {
     isInitialLoad = false;
   }
 
-  // Set up event delegation once (event delegation works even after innerHTML changes)
   app.addEventListener("click", (e) => {
-    // Info button functionality
     if (e.target.closest(".info-button")) {
       e.preventDefault();
       showInfoPopup();
       return;
     }
 
-    // FAQ toggle functionality
     if (e.target.closest(".faq-question")) {
       const question = e.target.closest(".faq-question");
       const faqItem = question.closest(".faq-item");
@@ -133,11 +115,10 @@ export function router() {
       }
     }
 
-    // Handle anchor/hash links (smooth scroll to sections)
     if (e.target.closest("a[href^='#']")) {
       const link = e.target.closest("a[href^='#']");
       const href = link.getAttribute("href");
-      const targetId = href.substring(1); // Remove the #
+      const targetId = href.substring(1); 
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
@@ -145,11 +126,10 @@ export function router() {
         const lenis = getLenis();
         if (lenis) {
           lenis.scrollTo(targetElement, {
-            offset: -100, // Adjust for header height
+            offset: -100, 
             duration: 1.5,
           });
         } else {
-          // Fallback to native smooth scroll
           targetElement.scrollIntoView({ 
             behavior: "smooth",
             block: "start"
@@ -159,7 +139,6 @@ export function router() {
       return;
     }
 
-    // Handle navigation links (only those with data-nav attribute)
     if (e.target.closest("a[data-nav]")) {
       const link = e.target.closest("a[data-nav]");
       const href = link.getAttribute("href");
@@ -167,25 +146,21 @@ export function router() {
       if (href && href.startsWith("/") && !href.startsWith("//")) {
         e.preventDefault();
         
-        // Check if href contains a hash (e.g., "/#services")
         const [path, hash] = href.split('#');
         
         if (hash) {
-          // Navigate to the page first
           navigate(path || '/');
           
-          // Then scroll to the section after a short delay
           setTimeout(() => {
             const targetElement = document.getElementById(hash);
             if (targetElement) {
               const lenis = getLenis();
               if (lenis) {
                 lenis.scrollTo(targetElement, {
-                  offset: -100, // Adjust for header height
+                  offset: -100, 
                   duration: 1.5,
                 });
               } else {
-                // Fallback to native smooth scroll
                 targetElement.scrollIntoView({ 
                   behavior: "smooth",
                   block: "start"
@@ -194,16 +169,13 @@ export function router() {
             }
           }, 300);
         } else {
-          // Regular navigation without hash
           navigate(href);
         }
       }
     }
   });
 
-  // Set up Info popup event handlers (use capture phase for better reliability)
   document.addEventListener("click", (e) => {
-    // Close Info popup when clicking close button
     const infoCloseButton = e.target.closest(".info-popup-close");
     if (infoCloseButton) {
       console.log('Info close button clicked');
@@ -211,7 +183,6 @@ export function router() {
       return;
     }
 
-    // Close Location popup when clicking close button
     const locationCloseButton = e.target.closest(".location-popup-close");
     if (locationCloseButton) {
       console.log('Location close button clicked');
@@ -219,21 +190,18 @@ export function router() {
       return;
     }
 
-    // Close Info popup when clicking overlay
     if (e.target.classList.contains("info-popup-overlay")) {
       console.log('Info overlay clicked');
       hideInfoPopup();
       return;
     }
 
-    // Close Location popup when clicking overlay
     if (e.target.classList.contains("location-popup-overlay")) {
       console.log('Location overlay clicked');
       hideLocationPopup();
       return;
     }
 
-    // Handle Info popup button actions
     const actionButton = e.target.closest(".info-popup-button");
     if (actionButton) {
       const action = actionButton.getAttribute("data-action");
@@ -241,9 +209,7 @@ export function router() {
       switch (action) {
         case "price":
           hideInfoPopup();
-          // Scroll to services section or navigate to pricing
           if (window.location.pathname === "/") {
-            // Find the services section and scroll to it
             setTimeout(() => {
               const servicesSection = document.querySelector(".horizontal-container-2");
               if (servicesSection) {
@@ -259,7 +225,6 @@ export function router() {
               }
             }, 300);
           } else {
-            // Navigate to home page if not already there
             navigate("/");
             setTimeout(() => {
               const servicesSection = document.querySelector(".horizontal-container-2");
@@ -280,13 +245,11 @@ export function router() {
 
         case "call":
           hideInfoPopup();
-          // Trigger phone call
           window.location.href = "tel:+491627001514";
           break;
 
         case "location":
           hideInfoPopup();
-          // Show location popup with map
           setTimeout(() => {
             showLocationPopup();
           }, 300);
@@ -300,10 +263,8 @@ export function router() {
     render(path);
   }
 
-  // Handle initial load
   render(window.location.pathname);
 
-  // Handle browser back/forward buttons
   window.addEventListener("popstate", () => {
     render(window.location.pathname);
   });
